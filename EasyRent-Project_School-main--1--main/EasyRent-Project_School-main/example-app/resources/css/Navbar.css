@@ -1,0 +1,136 @@
+
+.navbar {
+  background: black;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100; 
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+.nav-links a {
+  position: relative;
+  color: #ffb400;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+.login-icon {
+  position: absolute;
+  right: 80px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+
+.account-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  
+
+  filter: brightness(0) saturate(100%) invert(66%) sepia(100%) saturate(500%) hue-rotate(1deg);
+}
+
+.account-icon:hover {
+  transform: scale(1.1);
+}
+
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  position: absolute;
+  left: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: black;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .login-icon {
+    right: 20px;
+    top: 10px;
+  }
+
+  .account-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
