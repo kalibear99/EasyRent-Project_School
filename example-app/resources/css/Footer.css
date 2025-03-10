@@ -42,12 +42,12 @@
 
 .footer-icons {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   margin-top: 10px;
 }
 
 .footer-icon {
-  font-size: 30px;
+  font-size: 25px;
   color: #929A9E;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
@@ -65,8 +65,13 @@
   font-weight: bold;
 }
 
-.footer-center p,
-.footer-right p {
+.footer-center p {
+  font-size: 16px;
+  margin: 0;
+  color: gray;
+}
+
+.footer-right a {
   font-size: 16px;
   margin: 0;
   color: gray;

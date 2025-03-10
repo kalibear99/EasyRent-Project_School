@@ -15,8 +15,8 @@ const Footer = () => {
         
         <div className="footer-right">
           <h3>Kontaktovat</h3>
-          <p>info@easyrent.cz</p>
-          <p>+420 123 456 789</p>
+          <a href="mailto:info@easyrent.cz">info@easyrent.cz</a>
+          <a href="tel:+420123456789">+420 123 456 789</a>
           
           <div className="footer-icons">
             <FaInstagram className="footer-icon"/>
