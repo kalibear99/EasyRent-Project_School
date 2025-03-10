@@ -64,7 +64,15 @@ const Contact = () => {
         </div>
 
         <div className="map-section">
-          <img src={mapImage} alt="Mapa" className="map-image" />
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.609250551443!2d17.69329847632812!3d49.22693717138454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713736217f47a19%3A0x13c5fafd124ff449!2zU3TFmWVkbsOtIMWha29sYSBCYWx0YWNpIHMuci5vLg!5e0!3m2!1scs!2scz!4v1741633606607!5m2!1scs!2scz"
+            width="1000"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
           <div className="contact-info">
             <p><strong>Adresa:</strong> Ulice 123, Město</p>
             <p><strong>Email:</strong> info@example.com</p>
