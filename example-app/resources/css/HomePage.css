@@ -155,3 +155,43 @@ p {
     font-size: 16px;
   }
 }
+
+@media (min-width: 1025px) {
+  .home-container {
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .overlay {
+    padding-top: 120px;
+  }
+
+  h1 {
+    font-size: 100px;
+  }
+
+  p {
+    font-size: 24px;
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-container {
+    height: 100vh;
+    padding: 0 10vw;
+  }
+
+  .overlay {
+    padding-top: 150px;
+  }
+
+  h1 {
+    font-size: 110px;
+  }
+
+  p {
+    font-size: 25px;
+    max-width: 1000px;
+  }
+}
