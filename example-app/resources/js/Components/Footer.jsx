@@ -1,9 +1,9 @@
 import React from "react";
-import { FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6"
 import "../../css/Footer.css";
 
 const Footer = () => {
-  return (
+  return (  
     <footer className="footer">
       <div className="footer-container">       
         <div className="footer-center">
@@ -19,8 +19,8 @@ const Footer = () => {
           <p>+420 123 456 789</p>
           
           <div className="footer-icons">
-            <FaInstagram className="footer-icon" />
-            <FaTwitter className="footer-icon" />
+            <FaInstagram className="footer-icon"/>
+            <FaXTwitter className="footer-icon"/>
           </div>
         </div>
       </div>
