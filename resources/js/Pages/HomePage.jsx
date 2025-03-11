@@ -12,7 +12,7 @@ const HomePage = () => {
     <MainLayout>
       <div className="home-container">
         <div className="overlay">
-          <h1>Vaše auto, vaše cesta</h1>
+          <h1 className="homepage-title">Vaše auto, vaše cesta</h1>
           <p>
             Od malých aut do města až po prostorná SUV na víkendové výlety – najdete u nás to pravé. 
             Rezervace je snadná a rychlá, abyste mohli vyrazit bez zbytečných starostí.

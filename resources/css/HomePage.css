@@ -75,12 +75,14 @@ body {
   z-index: 2;
 }
 
-h1 {
-  font-size: 140px;
+.homepage-title{
+  font-size: 120px;
   font-weight: 500;
   margin: 0 auto 20px auto;
   max-width: 100%;
+  color: white;
 }
+
 
 p {
   font-size: 26px;
@@ -103,7 +105,7 @@ p {
     padding-top: 180px;
   }
 
-  h1 {
+  .homepage-title {
     font-size: 80px;
   }
 
@@ -127,7 +129,7 @@ p {
     padding-top: 200px;
   }
 
-  h1 {
+  .homepage-title {
     font-size: 50px;
   }
 
@@ -147,7 +149,7 @@ p {
     padding-top: 230px;
   }
 
-  h1 {
+  .homepage-title {
     font-size: 35px;
   }
 
@@ -166,7 +168,7 @@ p {
     padding-top: 120px;
   }
 
-  h1 {
+  .homepage-title {
     font-size: 100px;
   }
 
@@ -186,7 +188,7 @@ p {
     padding-top: 150px;
   }
 
-  h1 {
+  .homepage-title {
     font-size: 110px;
   }
 

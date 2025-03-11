@@ -63,7 +63,8 @@
 .car-reservation-details {
   flex: 1;
   padding-left: 40px;
-  margin-top: 60px;
+  margin-top: -60px;
+  margin-bottom: 100px;
 }
 
 .car-reservation-details h1 {
