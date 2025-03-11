@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+html, body {
+  overflow-x: hidden; /* Skryje vodorovný scrollbar */
+}
+
+.onas-container {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🎯 Hero sekce */
+.hero-section {
+  position: relative;
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.hero-title {
+  font-size: 96px;
+  color: orange;
+  margin: 0;
+  font-weight: 400;
+  text-align: left;
+}
+
+.hero-text {
+  font-size: 20px;
+  color: white;
+  text-align: left;
+  margin-left: 0px;
+  max-width: 620px;
+  margin-top: 10px;
+}
+
+/* 📜 Obsahová sekce */
+.content-section {
+  text-align: center;
+  padding: 100px 5%;
+  background-color: white;
+}
+
+.content-title {
+  font-size: 77px;
+  font-weight: 550;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.underline-start {
+  width: 550px;
+  height: 3px;
+  background-color: orange;
+  margin: 0 auto 70px;
+}
+
+.content-text {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* 🏆 Sekce týmu */
+.team-section {
+  text-align: left;
+  padding: 80px 5%;
+  background-color: white;
+}
+
+.team-title {
+  font-size: 77px;
+  font-weight: 550;
+  color: black;
+  margin: 10px 0;
+}
+
+.underline {
+  width: 130px;
+  height: 3px;
+  background-color: orange;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  gap: 120px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  flex-wrap: wrap; /* Ensures that items will wrap on smaller screens */
+}
+
+
+.team-member {
+  width: 380px;
+  text-align: center;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.team-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.team-info h3 {
+  margin: 10px 0 5px;
+  font-size: 22px;
+}
+
+.team-info p {
+  font-size: 16px;
+  text-align: left;
+}
+
+.team-info a {
+  font-size: 18px;
+  color: orange;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+  margin-bottom: 100px;
+}
+
+/* 📱 Responsivní styly pro mobilní zařízení */
+@media (max-width: 768px) {
+  .underline-start {
+    width: 200px;
+    height: 3px;
+    background-color: orange;
+    margin: 0 auto 70px;
+  }
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .content-title {
+    font-size: 50px;
+  }
+
+  .content-text {
+    font-size: 16px;
+  }
+
+  .team-container {
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center; /* Center items vertically */
+  }
+
+  .team-member {
+    width: 70%;
+  }
+
+  .team-title {
+    font-size: 60px;
+  }
+}
+
+/* 🖥️ Responsivní styly pro tablety */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 72px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    max-width: 90%;
+  }
+
+  .content-title {
+    font-size: 60px;
+  }
+
+  .content-text {
+    font-size: 18px;
+  }
+
+  .team-container {
+    gap: 80px;
+  }
+
+  .team-member {
+    width: 75%;
+  }
+
+  .team-title {
+    font-size: 70px;
+  }
+  .underline-start {
+    width: 400px;
+    height: 3px;
+    background-color: orange;
+    margin: 0 auto 70px;
+  }
+}
+@media (max-width: 376px) {
+  .underline-start {
+    width: 200px;
+    height: 3px;
+    background-color: orange;
+    margin: 0 auto 70px;
+  }
+}
+@media (max-width: 550px) {
+  .underline-start {
+    width: 250px;
+    height: 3px;
+    background-color: orange;
+    margin: 0 auto 70px;
+  }
+}
+@media (max-width: 345px)
+{
+  .team-info {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .team-info h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+  }
+  
+  .team-info p {
+    font-size: 12px;
+    text-align: left;
+  }
+  
+  .team-info a {
+    font-size: 12px;
+    color: orange;
+    text-decoration: none;
+    font-weight: normal;
+  }
+  
+}

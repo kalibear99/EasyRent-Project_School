@@ -19,6 +19,20 @@ Route::get('/kontakt', function () {
     return Inertia::render('Contact');
 });
 
+Route::get('/vyber-aut', function () {
+    return Inertia::render('CarCards');
+});
+
+Route::get('/o-nas', function () {
+    return Inertia::render('Onas');
+});
+
+Route::get('/vyber-aut/{id}', function ($id) {
+    return Inertia::render('CarReservation', [
+        'carId' => $id
+    ]);
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

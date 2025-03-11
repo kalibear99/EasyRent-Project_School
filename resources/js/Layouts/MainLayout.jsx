@@ -29,8 +29,8 @@ const MainLayout = ({ children }) => {
 
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
           <Link href="/" onClick={() => setMenuOpen(false)}>Domů</Link>
-          <Link href="/" onClick={() => setMenuOpen(false)}>Výběr aut</Link>
-          <Link href="/" onClick={() => setMenuOpen(false)}>O nás</Link>
+          <Link href="/vyber-aut" onClick={() => setMenuOpen(false)}>Výběr aut</Link>
+          <Link href="/o-nas" onClick={() => setMenuOpen(false)}>O nás</Link>
           <Link href="/kontakt" onClick={() => setMenuOpen(false)}>Kontakt</Link>
         </div>
 

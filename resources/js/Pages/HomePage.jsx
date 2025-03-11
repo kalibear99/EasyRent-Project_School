@@ -17,7 +17,7 @@ const HomePage = () => {
             Od malých aut do města až po prostorná SUV na víkendové výlety – najdete u nás to pravé. 
             Rezervace je snadná a rychlá, abyste mohli vyrazit bez zbytečných starostí.
           </p>
-          <Link href="/cars">
+          <Link href="/vyber-aut">
             <Button className="underline-btn">Nabídka vozů</Button>
           </Link>
         </div>

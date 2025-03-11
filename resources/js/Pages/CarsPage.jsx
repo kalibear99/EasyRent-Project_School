@@ -23,7 +23,7 @@ const CarsPage = () => {
           Prozkoumejte naši nabídku vozů a vyberte si ten, který perfektně vyhovuje vašim potřebám. <br />
           Rychlá rezervace a dostupnost ihned.
         </p>
-        <Button className="cta-button">Nabídka vozů</Button>
+        <a href="vyber-aut" className="cta-button">Nabídka vozů</a>
       </div>
       
       <div className="right-section">

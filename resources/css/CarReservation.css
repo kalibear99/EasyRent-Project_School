@@ -1,0 +1,308 @@
+
+.car-reservation-orange-text {
+  color: #FFB338; 
+}
+
+.car-reservation-header {
+  text-align: center;
+  font-size: 82px;
+  font-weight: 550;
+  margin-top: 100px;
+  margin-bottom: 0px; 
+  color: #000000; 
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+.car-reservation-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  align-items: flex-start; 
+  flex-wrap: wrap; 
+}
+
+.car-reservation-overview {
+  flex: 1;
+  text-align: center;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: -70px; 
+}
+
+.car-reservation-image {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  margin-bottom: 15px;
+}
+
+.car-reservation-overview h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+.car-description-title{
+  text-align: left;
+}
+.car-reservation-description {
+  font-size: 16px;
+  color: black; 
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.car-reservation-details {
+  flex: 1;
+  padding-left: 40px;
+  margin-top: 60px;
+}
+
+.car-reservation-details h1 {
+  font-size: 46px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.car-reservation-label {
+  color: #f4a742;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.car-reservation-date-time {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-reservation-date-block {
+  margin-bottom: 15px;
+}
+
+.car-reservation-date-time-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.car-reservation-date-time-box img {
+  width: 18px;
+}
+
+.car-reservation-summary {
+  margin-top: 20px;
+}
+
+.car-reservation-summary p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: black; 
+}
+
+.car-reservation-light-text {
+  color: #FFB338;
+}
+
+.car-reservation-bold-text {
+  font-weight: bold;
+}
+
+.car-reservation-reserve-button {
+  background-color: #f4a742;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.car-reservation-info {
+  margin-top: 20px;
+}
+
+.car-reservation-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; 
+}
+
+
+.car-reservation-info-grid p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: black; 
+}
+
+.car-reservation-deposit {
+  font-size: 16px;
+  color: #f4a742;
+  font-weight: bold;
+  grid-column: span 2;
+}
+
+
+.car-reservation-description,
+.car-reservation-summary p,
+.car-reservation-bold-text {
+  color: black; 
+}
+
+.Price-car-reservation {
+  font-size: 60px;
+  font-weight: medium;
+  margin-bottom: -40px;
+  text-align: left;
+}
+
+.Title-car-reservation {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+
+@media (max-width: 1024px) {
+  .car-reservation-header {
+    font-size: 60px;
+    margin-top: 80px;
+  }
+
+  .car-reservation-container {
+    flex-direction: column; 
+    padding: 20px;
+  }
+
+  .car-reservation-overview {
+    padding-right: 0;
+    margin-top: 0;
+  }
+
+  .car-reservation-details {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+
+  .car-reservation-image {
+    max-width: 100%;
+  }
+
+  .car-reservation-details h1 {
+    font-size: 36px;
+  }
+
+  .car-reservation-reserve-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .car-reservation-info-grid {
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+@media (max-width: 768px) {
+  .car-reservation-header {
+    font-size: 50px;
+    margin-top: 50px;
+  }
+
+  .car-reservation-container {
+    padding: 10px;
+  }
+
+  .car-reservation-overview {
+    margin-top: 0;
+  }
+
+  .car-reservation-image {
+    max-width: 100%;
+  }
+
+  .car-reservation-details h1 {
+    font-size: 28px;
+  }
+
+  .car-reservation-summary p {
+    font-size: 12px;
+  }
+
+  .car-reservation-label {
+    font-size: 12px;
+  }
+
+  .car-reservation-info-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .Price-car-reservation {
+    font-size: 36px;
+  }
+
+  .Title-car-reservation {
+    font-size: 18px;
+  }
+
+  .car-reservation-reserve-button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-reservation-header {
+    font-size: 40px;
+    margin-top: 50px;
+  }
+
+  .car-reservation-container {
+    padding: 10px;
+  }
+
+  .car-reservation-overview,
+  .car-reservation-details {
+    padding: 10px;
+  }
+
+  .car-reservation-image {
+    max-width: 100%;
+  }
+
+  .car-reservation-details h1 {
+    font-size: 24px;
+  }
+
+  .car-reservation-summary p {
+    font-size: 10px;
+  }
+
+  .car-reservation-info-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .Price-car-reservation {
+    font-size: 30px;
+  }
+
+  .Title-car-reservation {
+    font-size: 16px;
+  }
+
+  .car-reservation-reserve-button {
+    font-size: 10px;
+    padding: 6px;
+  }
+}

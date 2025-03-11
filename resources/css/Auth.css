@@ -5,7 +5,6 @@
   height: 100vh;
   padding: 0 15px; 
   box-sizing: border-box;
-
 }
 
 .login-box {
@@ -13,7 +12,7 @@
   padding: 50px;
   border-radius: 8px;
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   text-align: left;
 }
 
@@ -25,16 +24,16 @@
 }
 
 .login-underline {
-  width: 25%;
+  width: 30%;
   height: 3px;
   background: #ffb400;
   margin: 10px 0 20px;
-  margin-left: 20px;
+  margin-left: 25px;
   margin-bottom: 50px;
 }
 
 .register-underline {
-  width: 40%;
+  width: 50%;
   height: 3px;
   background: #ffb400;
   margin: 10px 0 20px;
@@ -140,14 +139,12 @@ form input {
   text-decoration: underline;
 }
 
-
+/* Responsive Styles */
 @media (max-width: 1024px) {
   .login-box {
     padding: 40px;
     width: 90%; 
-    max-width: 1000px;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    max-width: 400px;
   }
 
   .login-title {
@@ -176,7 +173,7 @@ form input {
   .login-box {
     padding: 30px;
     width: 100%;
-    max-width: 650px; 
+    max-width: 350px; 
   }
 
   .login-title {
@@ -206,48 +203,6 @@ form input {
     padding: 20px;
     width: 100%;
     max-width: 300px; 
-    margin-bottom: 100px;
-    margin-top: 100px;
-  }
-
-  .login-title {
-    font-size: 16px;
-  }
-
-  .login-underline {
-    width: 30%;
-  }
-
-  .register-underline {
-    width: 55%;
-  }
-
-  .register-name-fields {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  input {
-    padding: 12px;
-  }
-
-  .login-button {
-    padding: 14px;
-  }
-
-  .social-icons img {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 375px) {
-  .login-box {
-    padding: 20px;
-    width: 110%;
-    max-width: 400px; 
-    margin-top: 150px;
-    
   }
 
   .login-title {

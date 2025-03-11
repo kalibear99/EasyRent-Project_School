@@ -1,23 +1,18 @@
 
 .navbar {
-  background-color: black; 
+  background: black;
   color: white;
   padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1100;
-  transition: background-color 0.3s ease; 
-}
-
-
-.navbar.transparent-navbar {
-  background-color: transparent; 
-  box-shadow: none; 
+  z-index: 1100; 
 }
 
 
@@ -31,7 +26,7 @@
 
 .nav-links a {
   position: relative;
-  color: #ffb400; 
+  color: #ffb400;
   text-decoration: none;
   font-weight: 500;
   padding: 10px 15px;
@@ -55,6 +50,7 @@
   color: white;
 }
 
+
 .nav-links a:hover::after {
   width: 100%;
 }
@@ -62,12 +58,13 @@
 
 .login-icon {
   position: absolute;
-  right: 100px;  
+  right: 80px;
   top: 15px;
   display: flex;
   align-items: center;
   z-index: 1001;
 }
+
 
 .account-icon {
   width: 40px;
@@ -75,6 +72,8 @@
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
+  
+
   filter: brightness(0) saturate(100%) invert(66%) sepia(100%) saturate(500%) hue-rotate(1deg);
 }
 
@@ -96,8 +95,7 @@
 
 @media (max-width: 768px) {
   .navbar {
-    justify-content: space-between;
-    padding: 25px; 
+    justify-content: center;
   }
 
   .menu-icon {
@@ -127,25 +125,12 @@
   }
 
   .login-icon {
-    right: 60px;   
+    right: 20px;
     top: 10px;
   }
 
   .account-icon {
-    width: 35px; 
+    width: 35px;
     height: 35px;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .login-icon {
-    right: 60px;   
-    top: 5px;
-  }
-
-  .account-icon {
-    width: 30px;  
-    height: 30px;
   }
 }
