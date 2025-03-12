@@ -37,16 +37,18 @@ input {
 }
 
 .title-underline {
-  width: 450px;
+  width: 400px;
   height: 3px;
+  margin-left: 50px;
   background: #ffb400;
   margin-top: 5px;
   margin-bottom: 80px;
 }
 
 .title-underline-location {
-  width: 450px;
+  width: 300px;
   height: 3px;
+  margin-left: 50px;
   background: #ffb400;
   margin-bottom: 40px;
 }
@@ -195,10 +197,87 @@ textarea {
   width: 25px;
   height: 25px;
 }
+.map-section iframe {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  border: 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 1700px) {
+  .page-title-contact {
+    font-size: 60px;
+    transform: translateX(230px);
+    
+  }
+  .contact-box {
+    background: #D9D9D9;
+    margin-top: 50px;
+    padding: 50px;
+    border-radius: 8px;
+    width: 1200px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .title-underline
+  {
+    transform: translateX(210px);
+    width: 27%;
+    height: 2px;
+    margin-bottom: 0px;
+  }
+
+  .page-title-contact-location {
+    font-size: 40px;
+    transform: translateX(230px);
+  }
+  .title-underline-location
+  {
+    height: 2px;
+    transform: translateX(210px);
+    width: 17%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .map-section iframe {
+    height: 350px;
+    width: 700px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .map-section iframe {
+    height: 300px;
+    width: 500px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .map-section iframe {
+    height: 250px;
+    width: 360px;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .map-section iframe {
+    height: 200px;
+    width: 300px;
+  }
+}
+
 @media (max-width: 1440px) {
   .page-title-contact {
     font-size: 60px;
     transform: translateX(230px);
+
     
     
   }
@@ -224,15 +303,15 @@ textarea {
 @media (max-width: 1280px) {
 
   .page-title-contact {
-    font-size: 40px;
+    font-size: 60px;
     transform: translateX(230px);
     
     
   }
   .title-underline
   {
-    transform: translateX(245px);
-    width: 17%;
+    transform: translateX(225px);
+    width: 25%;
     height: 2px;
     margin-bottom: 0px;
   }
@@ -246,22 +325,22 @@ textarea {
   .title-underline-location
   {
     height: 2px;
-    transform: translateX(245px);
+    transform: translateX(215px);
     width: 17%;
   }
 }
 
-/* Responsive styles */
+
 @media (max-width: 1024px) {
   .page-title-contact {
     font-size: 40px;
-    transform: translateX(30px);
+    transform: translateX(0px);
     
     
   }
   .title-underline
   {
-    transform: translateX(45px);
+    transform: translateX(-25px);
     width: 85%;
     height: 2px;
     margin-bottom: 0px;
@@ -270,12 +349,12 @@ textarea {
 
   .page-title-contact-location {
     font-size: 40px;
-    transform: translateX(30px);
+    transform: translateX(-50px);
   }
   .title-underline-location
   {
     height: 2px;
-    transform: translateX(45px);
+    transform: translateX(-85px);
     width: 85%;
   }
 
@@ -292,10 +371,21 @@ textarea {
 
   .contact-box {
     justify-content: center;
-    width: 80%;
+    width: 100%;
     padding: 30px;
-    margin-left: 10px;
+    margin-left: 0px;
     
+  }
+
+  .map-section iframe{
+    margin-left: 100px;
+  }
+
+  .contact-info {
+    margin-left: 100px;
+    margin-top: 20px;
+    width: 90%;
+    padding: 40px 20px;
   }
 
   .name-fields {
@@ -317,13 +407,7 @@ textarea {
     margin-right: 100px;
   }
 
-  .contact-info {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    width: 80%;
-    padding: 40px 20px;
-  }
+ 
 
   .contact-info p,
   .contact-info .address,
@@ -340,14 +424,14 @@ textarea {
 @media (max-width: 768px) {
   
   .page-title-contact {
-    font-size: 40px;
-    transform: translateX(30px);
+    font-size: 55px;
+    transform: translateX(-10px);
     
     
   }
   .title-underline
   {
-    transform: translateX(45px);
+    transform: translateX(-25px);
     width: 85%;
     height: 2px;
     margin-bottom: 0px;
@@ -355,20 +439,29 @@ textarea {
 
   .contact-box {
     justify-content: center;
-    width: 80%;
+    width: 100%;
     padding: 30px;
     margin-left: -5px;
     
   }
 
+  .map-section iframe{
+    margin-left: 100px;
+  }
+
+  .contact-info {
+    margin-left: 100px;
+    width: 83%;
+  }
+
   .page-title-contact-location {
     font-size: 40px;
-    transform: translateX(30px);
+    transform: translateX(-60px);
   }
   .title-underline-location
   {
     height: 2px;
-    transform: translateX(45px);
+    transform: translateX(-85px);
     width: 85%;
   }
 
@@ -377,11 +470,7 @@ textarea {
     font-size: 14px;
   }
 
-  .contact-info {
-    width: 90%;
-    margin-top: 20px;
-    padding: 20px 10px;
-  }
+  
 
   .map-section {
     margin-top: 50px;
@@ -391,17 +480,75 @@ textarea {
     max-width: 100%;
   }
 }
+@media (max-width: 670px){
+  .page-title-contact {
+    font-size: 50px;
+    transform: translateX(60px);
+    
+    
+  }
+  
+  .title-underline
+  {
+    transform: translateX(40px);
+    width: 80%;
+    height: 2px;
+    margin-bottom: 0px;
+  }
 
+  .page-title-contact-location {
+    font-size: 30px;
+    transform: translateX(60px);
+  }
+
+  .title-underline-location
+  {
+    height: 2px;
+    transform: translateX(30px);
+    width: 80%;
+  }
+}
+
+@media (max-width: 540px){
+  .page-title-contact {
+    font-size: 50px;
+    transform: translateX(60px);
+    
+    
+  }
+  
+  .title-underline
+  {
+    transform: translateX(40px);
+    width: 80%;
+    height: 2px;
+    margin-bottom: 0px;
+  }
+
+  .page-title-contact-location {
+    font-size: 30px;
+    transform: translateX(60px);
+  }
+
+  .title-underline-location
+  {
+    height: 2px;
+    transform: translateX(30px);
+    width: 80%;
+  }
+}
 @media (max-width: 480px) {
+
+  
   .page-title-contact {
     font-size: 30px;
-    transform: translateX(30px);
+    transform: translateX(60px);
     
     
   }
   .title-underline
   {
-    transform: translateX(45px);
+    transform: translateX(35px);
     width: 80%;
     height: 2px;
     margin-bottom: 0px;
@@ -409,28 +556,32 @@ textarea {
 
   .contact-box {
     justify-content: center;
-    width: 80%;
+    width: 100%;
     padding: 30px;
-    margin-left: -17px;
+    margin-left: 0px;
     
+  }
+  .map-section iframe{
+    margin-left: 100px;
+  }
+
+  .contact-info {
+    margin-left: 100px;
+    width: 78%;
   }
 
   .page-title-contact-location {
     font-size: 30px;
-    transform: translateX(30px);
+    transform: translateX(60px);
   }
   .title-underline-location
   {
     height: 2px;
-    transform: translateX(45px);
+    transform: translateX(35px);
     width: 80%;
   }
-
-  .contact-info {
-    width: 100%;
-    margin-top: 20px;
-    padding: 20px 10px;
-  }
+  
+  
 
   .social-icons img {
     width: 18px;
@@ -446,26 +597,29 @@ textarea {
 @media (max-width: 375px) {
   .page-title-contact {
     font-size: 30px;
-    transform: translateX(30px);
+    transform: translateX(60px);
     
     
   }
   .title-underline
   {
-    transform: translateX(45px);
+    transform: translateX(35px);
     width: 80%;
     height: 2px;
     margin-bottom: 0px;
   }
   .contact-box
   {
-    margin-left: -20px;
+    width: 100%;
+    margin-left: 0px;
+  }
+  .map-section iframe{
+    margin-left: 100px;
   }
 
   .contact-info {
-    width: 100%;
-    margin-top: 20px;
-    padding: 20px 10px;
+    margin-left: 90px;
+    width: 80%;
   }
 
   .social-icons img {
@@ -474,12 +628,12 @@ textarea {
   }
   .page-title-contact-location {
     font-size: 30px;
-    transform: translateX(30px);
+    transform: translateX(60px);
   }
   .title-underline-location
   {
     height: 2px;
-    transform: translateX(45px);
+    transform: translateX(35px);
     width: 80%;
   }
   .contact-info p,
@@ -491,13 +645,13 @@ textarea {
 @media (max-width: 344px) {
   .page-title-contact {
     font-size: 30px;
-    transform: translateX(40px);
+    transform: translateX(80px);
     
     
   }
   .title-underline
   {
-    transform: translateX(55px);
+    transform: translateX(50px);
     width: 80%;
     height: 2px;
     margin-bottom: 0px;
@@ -505,20 +659,28 @@ textarea {
 
   .contact-box {
     justify-content: center;
-    width: 80%;
+    width: 110%;
     padding: 30px;
-    margin-left: -25px;
+    margin-left: -15px;
     
   }
+  .contact-info{
+    margin-left: 90px;
+    width: 80%;
+  }
 
+  .map-section iframe{
+    margin-left: 100px;
+  }
+  
   .page-title-contact-location {
     font-size: 30px;
-    transform: translateX(40px);
+    transform: translateX(90px);
   }
   .title-underline-location
   {
     height: 2px;
-    transform: translateX(55px);
+    transform: translateX(65px);
     width: 80%;
   }
 

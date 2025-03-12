@@ -65,8 +65,13 @@
   font-weight: bold;
 }
 
-.footer-center p,
-.footer-right p {
+.footer-center p{
+  font-size: 16px;
+  margin: 0;
+  color: gray;
+}
+
+.footer-right a{
   font-size: 16px;
   margin: 0;
   color: gray;
