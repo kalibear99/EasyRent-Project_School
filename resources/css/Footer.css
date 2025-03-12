@@ -42,12 +42,12 @@
 
 .footer-icons {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   margin-top: 10px;
 }
 
 .footer-icon {
-  font-size: 30px;
+  font-size: 25px;
   color: #929A9E;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
@@ -59,27 +59,27 @@
 
 .footer-center h3,
 .footer-right h3 {
-  font-size: 18px;
+  font-size: 30px;
   margin: 0;
   color: #e0a123;
   font-weight: bold;
 }
 
 .footer-center p{
-  font-size: 16px;
+  font-size: 18px;
   margin: 0;
   color: gray;
 }
 
 .footer-right a{
-  font-size: 16px;
+  font-size: 18px;
   margin: 0;
   color: gray;
 }
 
 .footer-bottom {
-  margin-top: 40px;
-  font-size: 14px;
+  margin-top: 100px;
+  font-size: 16px;
   color: gray;
   text-align: center;
   width: 100%;

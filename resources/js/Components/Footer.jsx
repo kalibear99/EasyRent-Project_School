@@ -10,14 +10,13 @@ const Footer = () => {
           <h3>EasyRent</h3>
           <p>Výběr aut</p>
           <p>O nás</p>
-          <p>Kontaktovat</p>
+          <p>Kontakt</p>
         </div>
         
         <div className="footer-right">
           <h3>Kontaktovat</h3>
-          <p>info@easyrent.cz</p>
-          <p>+420 123 456 789</p>
-          
+          <a class="mail" href="mailto:info@easyrent.cz">info@easyrent.cz</a>
+          <a class="mail" href="tel:+420123456789">+420 123 456 789</a>
           <div className="footer-icons">
             <FaInstagram className="footer-icon"/>
             <FaXTwitter className="footer-icon"/>

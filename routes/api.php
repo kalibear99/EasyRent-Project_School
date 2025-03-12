@@ -15,3 +15,4 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->get('/user', [AuthController::class, 'user']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('/contact', [ApiContactController::class, 'sendEmail']);
+Route::get('/cars', [CarController::class, 'index']);
