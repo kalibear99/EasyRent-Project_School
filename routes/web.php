@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CarController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -19,18 +20,12 @@ Route::get('/kontakt', function () {
     return Inertia::render('Contact');
 });
 
-Route::get('/vyber-aut', function () {
-    return Inertia::render('CarCards');
-});
+Route::get('/vyber-aut', [CarController::class, 'index']);
+
+Route::get('/vyber-aut/{id}', [CarController::class, 'reservation'])->name('car.reservation');
 
 Route::get('/o-nas', function () {
     return Inertia::render('Onas');
-});
-
-Route::get('/vyber-aut/{id}', function ($id) {
-    return Inertia::render('CarReservation', [
-        'carId' => $id
-    ]);
 });
 
 Route::get('/dashboard', function () {

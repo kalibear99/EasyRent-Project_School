@@ -2,10 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "resources/css/Auth.css";
 
-
-import facebookIcon from "../assets/facebook.png";
-import googleIcon from "../assets/google.png";
-
 const Register = () => {
   return (
     <div className="login-container">
