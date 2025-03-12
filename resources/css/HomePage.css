@@ -75,11 +75,12 @@ body {
   z-index: 2;
 }
 
-h1 {
-  font-size: 140px;
+.homepage-title {
+  font-size: 120px;
   font-weight: 500;
   margin: 0 auto 20px auto;
   max-width: 100%;
+  color: white;
 }
 
 p {
@@ -103,8 +104,8 @@ p {
     padding-top: 180px;
   }
 
-  h1 {
-    font-size: 80px;
+  .homepage-title {
+    font-size: 60px;
   }
 
   p {

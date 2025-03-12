@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 html, body {
-  overflow-x: hidden; /* Skryje vodorovný scrollbar */
+  overflow-x: hidden; 
 }
 
 .onas-container {
   font-family: 'Poppins', sans-serif;
 }
 
-/* 🎯 Hero sekce */
+
 .hero-section {
   position: relative;
   height: 85vh;
@@ -38,7 +38,7 @@ html, body {
   margin-top: 10px;
 }
 
-/* 📜 Obsahová sekce */
+
 .content-section {
   text-align: center;
   padding: 100px 5%;
@@ -70,7 +70,7 @@ html, body {
   color: #333;
 }
 
-/* 🏆 Sekce týmu */
+
 .team-section {
   text-align: left;
   padding: 80px 5%;
@@ -94,12 +94,12 @@ html, body {
 
 .team-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
+  justify-content: center; 
+  align-items: center;     
   gap: 120px;
   max-width: 1200px;
   margin: 40px auto 0;
-  flex-wrap: wrap; /* Ensures that items will wrap on smaller screens */
+  flex-wrap: wrap; 
 }
 
 
@@ -148,7 +148,7 @@ html, body {
   margin-bottom: 100px;
 }
 
-/* 📱 Responsivní styly pro mobilní zařízení */
+
 @media (max-width: 768px) {
   .underline-start {
     width: 200px;
@@ -176,7 +176,7 @@ html, body {
   .team-container {
     flex-direction: column;
     gap: 40px;
-    justify-content: center; /* Center items vertically */
+    justify-content: center; 
   }
 
   .team-member {
@@ -188,7 +188,7 @@ html, body {
   }
 }
 
-/* 🖥️ Responsivní styly pro tablety */
+
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 72px;

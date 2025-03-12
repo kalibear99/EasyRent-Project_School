@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 100vh; 
-  padding-bottom: 60px; 
+  min-height: 100vh;
+  padding-bottom: 60px;
 }
 
 .benefits-container {
@@ -15,11 +15,12 @@
   gap: 100px;
 }
 
-
 .benefits-image {
   position: relative;
   flex: 1;
   margin-top: 195px;
+  display: flex;
+  justify-content: center; /* Zarovnání na střed */
 }
 
 .benefits-image img {
@@ -29,6 +30,7 @@
   z-index: 2;
 }
 
+/* Tečky na desktopu necháváme */
 .benefits-image .dots {
   position: absolute;
   left: -70px;
@@ -39,6 +41,12 @@
   filter: grayscale(100%) brightness(0) contrast(200%);
 }
 
+/* Skrytí teček na menších zařízeních */
+@media (max-width: 1024px) {
+  .benefits-image .dots {
+    display: none;
+  }
+}
 
 .benefits-content {
   flex: 1;
@@ -58,17 +66,14 @@
   line-height: 1.2;
 }
 
-
 .benefits-underline {
-  width: 80%; 
+  width: 80%;
   height: 3px;
   background-color: #e0a123;
   margin-top: 20px;
   margin-bottom: 50px;
-  margin-left: 0; 
+  margin-left: 0;
 }
-
-
 
 .benefit-items {
   display: grid;
@@ -106,7 +111,6 @@
   line-height: 1.2;
 }
 
-
 .separator {
   width: 100%;
   height: 2px;
@@ -135,9 +139,7 @@
   background-color: #c68b1e;
 }
 
-
-
-
+/* RESPONSIVITA */
 @media (max-width: 1024px) {
   .benefits-container {
     flex-direction: column;
@@ -151,13 +153,8 @@
 
   .benefits-image img {
     width: 80%;
-  }
-
-  .benefits-image .dots {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    bottom: 100px;
+    max-width: 500px; /* Maximální šířka obrázku */
+    margin: 0 auto;
   }
 
   .benefits-title {
@@ -170,7 +167,6 @@
   }
 }
 
-
 @media (max-width: 768px) {
   .benefits-container {
     flex-direction: column;
@@ -181,13 +177,7 @@
 
   .benefits-image img {
     width: 90%;
-  }
-
-  .benefits-image .dots {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    bottom: 80px;
+    max-width: 400px;
   }
 
   .benefits-title {

@@ -40,7 +40,7 @@ const Onas = () => {
           </p>
         </div>
 
-        {/* Přidej tlačítko nad sekci s videem a aplikuj třídu pro vycentrování */}
+        
         <div className="center-button">
           <a href="/vyber-aut">
             <Button className="underline-btn">
@@ -49,15 +49,15 @@ const Onas = () => {
           </a>
         </div>
 
-        {/* 🎬 Video sekce */}
+        
         <VideoPage />
 
-        {/* 🏆 Tým sekce */}
+        
         <div className="team-section">
           <h2 className="team-title">Tým</h2>
           <div className="underline"></div>
           <div className="team-container">
-            {/* Člen týmu 1 */}
+            
             <div className="team-member">
               <img src={teamMember} alt="Petr Mára" className="team-image" />
               <div className="team-info">
@@ -67,7 +67,7 @@ const Onas = () => {
               </div>
             </div>
 
-            {/* Člen týmu 2 */}
+            
             <div className="team-member">
               <img src={teamMember} alt="Petr Mára" className="team-image" />
               <div className="team-info">
