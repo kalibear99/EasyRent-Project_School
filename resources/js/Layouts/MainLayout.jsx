@@ -3,6 +3,7 @@ import { Link } from "@inertiajs/react";
 import "../../assets/account-icon.png";
 import "../../css/Navbar.css"
 import accountIcon from "../../assets/account-icon.png";
+import logo from "../../assets/logo.png";
 import Footer from "@/Components/Footer";
 
 const MainLayout = ({ children }) => {
@@ -23,24 +24,29 @@ const MainLayout = ({ children }) => {
   return (
     <div className="app-container">
       <nav className="navbar">
-        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </div>
+          <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
+          </div>
 
-        <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <Link href="/" onClick={() => setMenuOpen(false)}>Domů</Link>
-          <Link href="/vyber-aut" onClick={() => setMenuOpen(false)}>Výběr aut</Link>
-          <Link href="/o-nas" onClick={() => setMenuOpen(false)}>O nás</Link>
-          <Link href="/kontakt" onClick={() => setMenuOpen(false)}>Kontakt</Link>
-        </div>
+          <div className="logo">
+            <Link href="/logo">
+            <img src={logo} alt="Logo" className="logo-img" />
+            </Link>
+          </div>
 
-        <div className="login-icon">
-          <Link href="/login">
-            <img src={accountIcon} alt="Účet" className="account-icon" />
-          </Link>
-        </div>
+          <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Domů</Link>
+            <Link href="/vyber-aut" onClick={() => setMenuOpen(false)}>Výběr aut</Link>
+            <Link href="/o-nas" onClick={() => setMenuOpen(false)}>O nás</Link>
+            <Link href="/kontakt" onClick={() => setMenuOpen(false)}>Kontakt</Link>
+          </div>
+
+          <div className="login-icon">
+            <Link href="/login">
+              <img src={accountIcon} alt="Účet" className="account-icon" />
+            </Link>
+          </div>
       </nav>
-
       <main>{children}</main>
 
       <footer>
