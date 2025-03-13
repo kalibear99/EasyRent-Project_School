@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ApiContactController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ReservationController;
 
 
 Route::get('/user', function (Request $request) {
@@ -20,3 +21,4 @@ Route::post('/contact', [ApiContactController::class, 'sendEmail']);
 Route::get('/cars', [CarController::class, 'apiIndex']);
 Route::get('/cars/{id}', [CarController::class, 'show']);
 Route::get('/filter-options', [CarController::class, 'getFilterOptions']);
+Route::post('/reservations', [ReservationController::class, 'store']);
