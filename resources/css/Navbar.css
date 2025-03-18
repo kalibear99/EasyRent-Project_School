@@ -1,20 +1,22 @@
 
 .navbar {
-  background-color: black; 
+  background-color: black;
   color: white;
   padding: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1100;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
 }
 
 .logo{
+  position: absolute; 
+  left: 30px; 
   width: 100px;
 }
 
@@ -60,14 +62,17 @@
 
 .login-icon {
   position: absolute;
-  right: 100px;  
-  top: 15px;
+  right: 100px;
+  top: 50%; 
+  transform: translateY(-50%); 
   display: flex;
   align-items: center;
   z-index: 1001;
 }
 
+
 .account-icon {
+  
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -92,10 +97,17 @@
 }
 
 
+
 @media (max-width: 768px) {
   .navbar {
     justify-content: space-between;
     padding: 25px; 
+  }
+  .logo {
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 100px;
   }
 
   .menu-icon {
@@ -103,8 +115,6 @@
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
     position: absolute;
     top: 60px;
     right: 0;
@@ -112,12 +122,23 @@
     width: 100%;
     text-align: center;
     padding: 20px 0;
+
+    
+    display: flex;
+    flex-direction: column;
+    
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
   }
 
   .nav-links.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
-
   .nav-links a {
     display: block;
     padding: 15px;
@@ -126,7 +147,7 @@
 
   .login-icon {
     right: 60px;   
-    top: 10px;
+    top: 50%;
   }
 
   .account-icon {
@@ -139,7 +160,7 @@
 @media (max-width: 480px) {
   .login-icon {
     right: 60px;   
-    top: 5px;
+    top: 50%;
   }
 
   .account-icon {
