@@ -20,6 +20,7 @@ const CarReservation = () => {
   const [returnTime, setReturnTime] = useState("14:50");
   const [days, setDays] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   if (!car) {
     return <div className="loading">Načítání...</div>;
@@ -28,7 +29,10 @@ const CarReservation = () => {
   const totalPrice = days * car.price;
 
   const handleReservation = async () => {
+    if (isSubmitted) return;
+
     setLoading(true);
+
     try {
       const pickupDateTime = `${pickupDate} ${pickupTime}:00`;
       const returnDateTime = `${returnDate} ${returnTime}:00`;
@@ -47,6 +51,8 @@ const CarReservation = () => {
 
       console.log("Odpověď ze serveru:", response);
       alert("Rezervace byla úspěšná!");
+
+      setIsSubmitted(true);
     } catch (error) {
       console.error("Chyba při rezervaci:", error.response?.data || error);
       alert(error.response?.data?.message || "Nastala chyba při rezervaci.");
@@ -115,9 +121,13 @@ const CarReservation = () => {
             <button
               className="car-reservation-reserve-button"
               onClick={handleReservation}
-              disabled={loading}
+              disabled={loading || isSubmitted}
+              style={{
+                backgroundColor: isSubmitted ? "#ccc" : "#f4a742",
+                cursor: isSubmitted ? "not-allowed" : "pointer",
+              }}
             >
-              {loading ? "Rezervuji..." : "Rezervovat"}
+              {isSubmitted ? "Rezervováno" : loading ? "Rezervuji..." : "Rezervovat"}
             </button>
 
             <div className="car-reservation-info">
