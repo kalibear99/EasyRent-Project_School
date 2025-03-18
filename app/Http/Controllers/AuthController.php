@@ -9,7 +9,7 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    // Registrace
+
     public function register(Request $request)
     {
         $request->validate([
@@ -29,7 +29,6 @@ class AuthController extends Controller
         return response()->json($user);
     }
 
-    // Přihlášení
     public function login(Request $request)
     {
         $request->validate([
@@ -46,13 +45,11 @@ class AuthController extends Controller
         return response()->json(['token' => $user->createToken('auth_token')->plainTextToken]);
     }
 
-    // Ověření přihlášeného uživatele
     public function user(Request $request)
     {
         return response()->json($request->user());
     }
 
-    // Odhlášení
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
