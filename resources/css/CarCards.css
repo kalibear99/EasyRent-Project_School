@@ -9,8 +9,19 @@ h1 {
   font-size: 72px;
   margin: 100px 0 20px 0;
   padding: 20px 0;
+  font-weight: 510;
   text-align: center;
   color: black;
+}
+
+
+.CarCards-underline {
+  width: 55%;
+  height: 3px;
+  background-color: #e0a123;
+  margin: 0 auto 50px auto;
+  margin-top: -30px;
+  display: block;
 }
 
 .subtext {

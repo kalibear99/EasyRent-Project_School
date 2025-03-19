@@ -117,6 +117,7 @@ const CarCards = ({ cars: initialCars, filters, activeFilters }) => {
     <MainLayout>
       <div className="container">
         <h1>Výběr našich vozidel</h1>
+        <div className="CarCards-underline"></div>
         <p className="subtext">Dostupných vozidel: {initialCars?.length || 0}</p>
 
         <div className="sort-button-container">

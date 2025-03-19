@@ -195,10 +195,15 @@ textarea {
   margin-top: 20px;
 }
 
-.social-icons img {
-  width: 25px;
-  height: 25px;
+.social-icons {
+  transition: transform 0.3s ease-in-out;
+  font-size: 25px;
 }
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
 .map-section iframe {
   width: 100%;
   max-width: 1000px;

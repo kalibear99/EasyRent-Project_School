@@ -25,8 +25,12 @@ const Footer = () => {
           <a className="mail" href="mailto:info@easyrent.cz">info@easyrent.cz</a>
           <a className="mail" href="tel:+420123456789">+420 123 456 789</a>
           <div className="footer-icons">
+          <a href="https://www.instagram.com/d.kalistt/?next=%2F">
             <FaInstagram className="footer-icon"/>
+          </a>
+          <a href="https://twitter.com/franta1626944">
             <FaXTwitter className="footer-icon"/>
+          </a>   
           </div>
         </div>
       </div>

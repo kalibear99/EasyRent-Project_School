@@ -138,7 +138,7 @@
   background-color: #c68b1e;
 }
 
-/* RESPONSIVITA */
+
 @media (max-width: 1024px) {
   .benefits-container {
     flex-direction: column;
@@ -152,7 +152,7 @@
 
   .benefits-image img {
     width: 80%;
-    max-width: 500px; /* Maximální šířka obrázku */
+    max-width: 500px; 
     margin: 0 auto;
   }
 

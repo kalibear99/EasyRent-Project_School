@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../../css/Contact.css";
-import twitterIcon from "../../assets/twitter.png";
-import instagramIcon from "../../assets/instagram.png";
 import MainLayout from "../Layouts/MainLayout";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -84,9 +83,12 @@ const Contact = () => {
             <p className="info">info@easyrent.cz</p>
             <p className="info">+420 123 456 789</p>
             <div className="social-icons">
-              <img src={twitterIcon} alt="Twitter" />
-              <img src={instagramIcon} alt="Instagram" />
-            </div>
+              <a href="https://www.instagram.com/d.kalistt/?next=%2F">
+                <FaInstagram className="social-icon"/>
+              </a>
+              <a href="https://twitter.com/franta1626944">
+                <FaXTwitter className="social-icon"/>
+              </a>            </div>
           </div>
         </div>
       </div>
