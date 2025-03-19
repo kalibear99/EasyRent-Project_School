@@ -20,7 +20,7 @@
   flex: 1;
   margin-top: 195px;
   display: flex;
-  justify-content: center; /* Zarovnání na střed */
+  justify-content: center;
 }
 
 .benefits-image img {
@@ -30,7 +30,7 @@
   z-index: 2;
 }
 
-/* Tečky na desktopu necháváme */
+
 .benefits-image .dots {
   position: absolute;
   left: -70px;
@@ -41,7 +41,6 @@
   filter: grayscale(100%) brightness(0) contrast(200%);
 }
 
-/* Skrytí teček na menších zařízeních */
 @media (max-width: 1024px) {
   .benefits-image .dots {
     display: none;
@@ -58,7 +57,7 @@
 
 .benefits-title {
   font-size: 64px;
-  font-weight: 500;
+  font-weight: 510;
   white-space: nowrap;
   position: relative;
   display: inline-block;

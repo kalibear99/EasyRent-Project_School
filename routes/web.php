@@ -8,29 +8,19 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('HomePage', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
 });
 
-
-Route::get('/kontakt', function () {
-    return Inertia::render('Contact');
-});
-
+Route::get('/kontakt', fn () => Inertia::render('Contact'));
 Route::get('/vyber-aut', [CarController::class, 'index']);
-
 Route::get('/vyber-aut/{id}', [CarController::class, 'reservation'])->name('car.reservation');
+Route::get('/o-nas', fn () => Inertia::render('Onas'));
 
-Route::get('/o-nas', function () {
-    return Inertia::render('Onas');
-});
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', fn () => Inertia::render('Dashboard'))
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -38,4 +28,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/login', fn () => Inertia::render('Auth/Login'))->name('login');
+Route::get('/register', fn () => Inertia::render('Auth/Register'))->name('register');

@@ -1,9 +1,10 @@
 import "../../../css/Auth.css";
 import MainLayout from "../../Layouts/MainLayout";
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, useForm } from '@inertiajs/react';
+import axios from 'axios'; // Předpokládám, že axios je nainstalovaný
 
 const Register = () => {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const { data, setData, processing, errors, setError, clearErrors } = useForm({
         first_name: '',
         last_name: '',
         email: '',
@@ -11,18 +12,38 @@ const Register = () => {
         password_confirmation: '',
     });
 
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault();
-        post(route('register'), {
-            onFinish: () => reset('password', 'password_confirmation'),
-        });
+        clearErrors();
+        
+        try {
+            const response = await axios.post("/api/register", {
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email,
+                password: data.password,
+                password_confirmation: data.password_confirmation
+            });
+            
+            console.log("Registrace úspěšná:", response.data);
+            
+            window.location.href = '/';
+            
+        } catch (error) {
+            console.error("Chyba při registraci:", error.response?.data);
+            
+            if (error.response?.data?.errors) {
+                Object.keys(error.response.data.errors).forEach(key => {
+                    setError(key, error.response.data.errors[key][0]);
+                });
+            }
+        }
     };
 
     return (
         <MainLayout>
             <div className="login-container">
                 <Head title="Registrace" />
-
                 <div className="login-box">
                     <h2 className="login-title">Vytvořit nový účet zákazníka</h2>
                     <div className="register-underline"></div>

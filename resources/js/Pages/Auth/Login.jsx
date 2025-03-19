@@ -3,17 +3,54 @@ import "../../../css/Auth.css";
 import facebookIcon from "../../../assets/facebook.png";
 import googleIcon from "../../../assets/google.png";
 import MainLayout from "../../Layouts/MainLayout";
+import axios from 'axios';
+import { useState } from 'react';
 
 const Login = ({ status, canResetPassword }) => {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const { data, setData, processing, errors, setError, clearErrors } = useForm({
         email: '',
         password: '',
         remember: false,
     });
 
-    const submit = (e) => {
+    const [loginStatus, setLoginStatus] = useState(status || '');
+
+    const submit = async (e) => {
         e.preventDefault();
-        post(route('login'), { onFinish: () => reset('password') });
+        clearErrors();
+        
+        try {
+            const response = await axios.post("/api/login", {
+                email: data.email,
+                password: data.password,
+                remember: data.remember
+            });
+            
+            console.log("Přihlášení úspěšné:", response.data);
+            
+            if (response.data.token) {
+                localStorage.setItem('auth_token', response.data.token);
+                axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.token}`;
+            }
+            
+            setLoginStatus('Přihlášení proběhlo úspěšně');
+            
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 1000);
+            
+        } catch (error) {
+            console.error("Chyba při přihlášení:", error.response?.data);
+            if (error.response?.data?.errors) {
+                Object.keys(error.response.data.errors).forEach(key => {
+                    setError(key, error.response.data.errors[key][0]);
+                });
+            } else if (error.response?.data?.message) {
+                setError('email', error.response.data.message);
+            } else {
+                setLoginStatus('Přihlášení se nezdařilo. Zkontrolujte své údaje.');
+            }
+        }
     };
 
     return (
@@ -21,7 +58,7 @@ const Login = ({ status, canResetPassword }) => {
             <div className="login-container">
                 <Head title="Přihlášení" />
 
-                {status && <div className="mb-4 text-sm font-medium text-green-600">{status}</div>}
+                {loginStatus && <div className="mb-4 text-sm font-medium text-green-600">{loginStatus}</div>}
 
                 <div className="login-box">
                     <h2 className="login-title">Přihlášení zákazníka</h2>
@@ -63,8 +100,7 @@ const Login = ({ status, canResetPassword }) => {
 
                         <div className="forgot-password">
                             {canResetPassword && (
-                                // <Link href={route('password.request')}>Zapomněli jste heslo?</Link>
-                                <Link>Zapomněli jste heslo?</Link>
+                                <Link href="/forgot-password">Zapomněli jste heslo?</Link>
                             )}
                         </div>
 

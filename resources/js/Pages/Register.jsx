@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"; 
-import "resources/css/Auth.css";
+import "../../css/Auth.css";
 
 const Register = () => {
   const [form, setForm] = useState({
