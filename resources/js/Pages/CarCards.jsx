@@ -116,7 +116,7 @@ const CarCards = ({ cars: initialCars, filters, activeFilters }) => {
   return (
     <MainLayout>
       <div className="container">
-        <h1>Výběr našich vozidel</h1>
+        <h1 className="CarCards-title">Výběr našich vozidel</h1>
         <div className="CarCards-underline"></div>
         <p className="subtext">Dostupných vozidel: {initialCars?.length || 0}</p>
 

@@ -30,3 +30,6 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/login', fn () => Inertia::render('Auth/Login'))->name('login');
 Route::get('/register', fn () => Inertia::render('Auth/Register'))->name('register');
+
+Route::get('/my-profile', fn () => Inertia::render('MyProfile'))->middleware('auth');
+Route::get('/rezervace', fn () => Inertia::render('YourReservations'))->middleware('auth');

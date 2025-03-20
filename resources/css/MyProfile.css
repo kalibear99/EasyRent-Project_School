@@ -1,0 +1,126 @@
+
+.MyProfile-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111;
+    color: white;
+    padding: 20px;
+  }
+  
+
+  .MyProfile-Title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+
+  .MyProfile-Underline {
+    width: 80px;
+    height: 4px;
+    background-color: #ffb400;
+    margin: 5px auto 20px;
+  }
+  
+
+  .MyProfile-ImageContainer {
+    margin-bottom: 20px;
+  }
+  
+  .MyProfile-ImageLabel {
+    cursor: pointer;
+  }
+  
+  .MyProfile-ImageWrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #222;
+  }
+  
+  .MyProfile-Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .MyProfile-Placeholder {
+    font-size: 0.9rem;
+    color: gray;
+  }
+  
+ 
+  .MyProfile-FileInput {
+    display: none;
+  }
+  
+ 
+  .MyProfile-Field {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+  }
+  
+  .MyProfile-Label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #bbb;
+  }
+  
+  .MyProfile-Input,
+  .MyProfile-Textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .MyProfile-Input:focus,
+  .MyProfile-Textarea:focus {
+    border-color: #ffb400;
+  }
+  
+  
+  .MyProfile-Button {
+    padding: 10px 20px;
+    background-color: #ffb400;
+    border: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .MyProfile-Button:hover {
+    background-color: #e09e00;
+  }
+  
+  /* Responzivita */
+  @media (max-width: 480px) {
+    .MyProfile-Title {
+      font-size: 1.5rem;
+    }
+  
+    .MyProfile-ImageWrapper {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .MyProfile-Button {
+      width: 100%;
+    }
+  }
+  

@@ -1,0 +1,142 @@
+
+.your-reservations-page-container {
+    max-width: 1024px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f7f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .your-reservations-title {
+    font-size: 56px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+  
+  .your-reservations-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #FFB338; 
+    margin: 0 auto 30px;
+    border-radius: 2px;
+  }
+  
+  
+  .your-reservations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .your-reservation-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+  }
+  
+  .your-reservation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .your-reservation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .your-car-name {
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .your-reservation-date {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .your-reservation-details {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  
+  .your-reservation-details p {
+    margin: 6px 0;
+  }
+  
+  .your-reservation-details strong {
+    color: #FFB338; 
+  }
+  
+
+  .your-total-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+ 
+  .your-pay-button {
+    background-color: #FFB338; 
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .your-pay-button:hover {
+    background-color: #f1c40f; 
+  }
+  
+
+  @media (max-width: 768px) {
+    .your-reservations-page-container {
+      padding: 15px;
+    }
+  
+    .your-reservations-title {
+      font-size: 22px;
+    }
+  
+    .your-reservation-item {
+      padding: 15px;
+    }
+  
+    .your-car-name {
+      font-size: 20px;
+    }
+  
+    .your-reservation-details {
+      font-size: 14px;
+    }
+  
+    .your-total-price {
+      font-size: 16px;
+    }
+  
+    .your-pay-button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  

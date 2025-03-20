@@ -96,7 +96,33 @@
   left: 20px;
 }
 
+.account-dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 1200;
+}
 
+
+.account-dropdown-item {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.account-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
 @media (max-width: 768px) {
   .navbar {

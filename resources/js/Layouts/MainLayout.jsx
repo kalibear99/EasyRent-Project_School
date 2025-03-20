@@ -7,11 +7,17 @@ import Footer from "@/Components/Footer";
 
 const MainLayout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const menuRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   const handleClick = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
+    if (
+      menuRef.current && !menuRef.current.contains(event.target) &&
+      dropdownRef.current && !dropdownRef.current.contains(event.target)
+    ) {
       setMenuOpen(false);
+      setDropdownOpen(false);
     }
   };
 
@@ -43,9 +49,22 @@ const MainLayout = ({ children }) => {
         </div>
 
         <div className="login-icon">
-          <Link href="/login">
-            <img src={accountIcon} alt="Účet" className="account-icon" />
-          </Link>
+          <img
+            src={accountIcon}
+            alt="Účet"
+            className="account-icon"
+            onClick={(e) => {
+              e.stopPropagation();
+              setDropdownOpen(!dropdownOpen);
+            }}
+          />
+{dropdownOpen && (
+  <div className="account-dropdown-menu" ref={dropdownRef}>
+    <Link href="/my-profile" className="account-dropdown-item">Můj Profil</Link>
+    <Link href="/rezervace" className="account-dropdown-item">Rezervace</Link>
+    <Link href="/logout" className="account-dropdown-item">Odhlásit se</Link>
+  </div>
+)}
         </div>
       </nav>
 
