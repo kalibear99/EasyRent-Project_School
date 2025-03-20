@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 import "../../css/CarsPage.css";
-
+import "../../css/app.css";
 import hyundai from "../../assets/hyundai-i30.png";
 import acuraMDX from "../../assets/acura-mdx.png";
 import acuraRDX from "../../assets/acura-rdx.png";

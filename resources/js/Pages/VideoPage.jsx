@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import playButton from "../../assets/play-button.png"; 
 import "../../css/VideoPage.css"; 
-
+import "../../css/app.css";
 
 const VideoPage = () => {
   const [isOpen, setIsOpen] = useState(false);

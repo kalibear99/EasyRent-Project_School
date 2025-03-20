@@ -6,6 +6,7 @@ import "../../css/HomePage.css";
 import CarsPage from "./CarsPage";
 import VideoPage from "./VideoPage";
 import Benefits from "./Benefits";
+import "../../css/app.css";
 
 const HomePage = () => {
   return (

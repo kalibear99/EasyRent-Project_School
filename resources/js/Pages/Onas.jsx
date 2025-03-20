@@ -5,6 +5,7 @@ import teamMember from "../../assets/team_members.png";
 import VideoPage from "./VideoPage";
 import MainLayout from "@/Layouts/MainLayout";
 import Button from "@/Components/Button";
+import "../../css/app.css";
 
 const Onas = () => {
 

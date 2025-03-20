@@ -2,6 +2,7 @@ import "../../../css/Auth.css";
 import MainLayout from "../../Layouts/MainLayout";
 import { Head, useForm } from '@inertiajs/react';
 import axios from 'axios'; // Předpokládám, že axios je nainstalovaný
+import "../../../css/app.css";
 
 const Register = () => {
     const { data, setData, processing, errors, setError, clearErrors } = useForm({

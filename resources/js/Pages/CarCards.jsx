@@ -4,7 +4,7 @@ import "../../css/CarCards.css";
 import calendarImage from "../../assets/calendar.png";
 import sortImage from "../../assets/sort.png";
 import MainLayout from "@/Layouts/MainLayout";
-
+import "../../css/app.css";
 
 const CarCards = ({ cars: initialCars, filters, activeFilters }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

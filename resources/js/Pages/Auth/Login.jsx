@@ -5,6 +5,7 @@ import googleIcon from "../../../assets/google.png";
 import MainLayout from "../../Layouts/MainLayout";
 import axios from 'axios';
 import { useState } from 'react';
+import "../../../css/app.css";
 
 const Login = ({ status, canResetPassword }) => {
     const { data, setData, processing, errors, setError, clearErrors } = useForm({

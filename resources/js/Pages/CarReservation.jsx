@@ -5,6 +5,7 @@ import "../../css/CarReservation.css";
 import calendarIcon from "../../assets/icon_calendar.png";
 import clockIcon from "../../assets/icon_clock.png";
 import MainLayout from "@/Layouts/MainLayout";
+import "../../css/app.css";
 
 const CarReservation = () => {
   const { car } = usePage().props;

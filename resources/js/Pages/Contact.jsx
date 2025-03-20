@@ -3,6 +3,7 @@ import axios from "axios";
 import "../../css/Contact.css";
 import MainLayout from "../Layouts/MainLayout";
 import { FaInstagram, FaXTwitter } from "react-icons/fa6";
+import "../../css/app.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
