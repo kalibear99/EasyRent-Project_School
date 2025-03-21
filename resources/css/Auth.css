@@ -1,17 +1,15 @@
-.login-container {
+.auth-login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 0 15px; 
+  padding: 0 15px;
   box-sizing: border-box;
   margin-top: 100px;
   margin-bottom: 20px;
-
 }
 
-.login-box {
-  
+.auth-login-box {
   background: #D9D9D9;
   padding: 50px;
   border-radius: 8px;
@@ -20,14 +18,14 @@
   text-align: left;
 }
 
-.login-title {
+.auth-login-title {
   color: black;
   font-size: 22px;
   font-weight: bold;
   text-align: left;
 }
 
-.login-underline {
+.auth-login-underline {
   width: 25%;
   height: 3px;
   background: #ffb400;
@@ -36,7 +34,7 @@
   margin-bottom: 50px;
 }
 
-.register-underline {
+.auth-register-underline {
   width: 40%;
   height: 3px;
   background: #ffb400;
@@ -45,14 +43,23 @@
   margin-bottom: 50px;
 }
 
-label {
+.auth-input {
   display: block;
-  color: black;
-  font-size: 16px;
-  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  
 }
 
-.register-name-fields {
+.auth-error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.auth-register-name-fields {
   display: flex;
   justify-content: space-between;
   gap: 15px;
@@ -60,31 +67,26 @@ label {
   width: 100%;
 }
 
-.name-fields .input-group {
+.auth-register-input-group {
   flex: 1;
 }
 
-
-form input {
-
-}
-
-.forgot-password {
+.auth-forgot-password {
   text-align: right;
   margin-top: 5px;
 }
 
-.forgot-password a {
+.auth-forgot-password a {
   color: #7B7E80;
   font-size: 14px;
   text-decoration: none;
 }
 
-.forgot-password a:hover {
+.auth-forgot-password a:hover {
   text-decoration: underline;
 }
 
-.login-button {
+.auth-login-button {
   width: 100%;
   background: #ffb400;
   border: none;
@@ -97,129 +99,100 @@ form input {
   margin-top: 15px;
 }
 
-.login-button:hover {
+.auth-login-button:hover {
   background: #e6a200;
 }
 
-.login-via-text {
-  color: black;
-  font-size: 14px;
-  font-weight: normal;
-  margin-top: 20px;
-}
-
-.social-icons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
-
-.register-text {
+.auth-register-text {
   margin-top: 20px;
   font-size: 14px;
   color: black;
 }
 
-.register-link {
+.auth-register-link {
   color: #ffb400;
   text-decoration: none;
   font-weight: bold;
 }
 
-.register-link:hover {
+.auth-register-link:hover {
   text-decoration: underline;
 }
 
-
 @media (max-width: 1024px) {
-  .login-box {
+  .auth-login-box {
     padding: 40px;
-    width: 90%; 
+    width: 90%;
     max-width: 1000px;
     margin-bottom: 100px;
     margin-top: 100px;
   }
 
-  .login-title {
+  .auth-login-title {
     font-size: 20px;
   }
 
-  .login-underline {
+  .auth-login-underline {
     width: 30%;
   }
 
-  .register-underline {
+  .auth-register-underline {
     width: 27%;
   }
 
-  .register-name-fields {
+  .auth-register-name-fields {
     flex-direction: column;
     gap: 10px;
-  }
-
-  .social-icons {
-    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
-  .login-box {
+  .auth-login-box {
     padding: 30px;
     width: 100%;
-    max-width: 650px; 
+    max-width: 650px;
   }
 
-  .login-title {
+  .auth-login-title {
     font-size: 18px;
   }
 
-  .login-underline {
+  .auth-login-underline {
     width: 30%;
   }
 
-  .register-underline {
+  .auth-register-underline {
     width: 32%;
   }
 
-  .register-name-fields {
+  .auth-register-name-fields {
     flex-direction: column;
     gap: 8px;
-  }
-
-  .social-icons {
-    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .login-container{
+  .auth-login-container {
     margin-top: -50px;
     margin-bottom: -100px;
   }
-  .login-box {
+
+  .auth-login-box {
     padding: 20px;
     width: 100%;
-    max-width: 300px; 
-    
+    max-width: 300px;
   }
 
-  .login-title {
+  .auth-login-title {
     font-size: 16px;
     text-align: center;
   }
 
-  .login-underline {
+  .auth-login-underline {
     width: 30%;
   }
 
-  .register-underline {
+  .auth-register-underline {
     width: 55%;
     display: flex;
     justify-content: center;
@@ -227,61 +200,50 @@ form input {
     margin-top: 8px;
   }
 
-  .register-name-fields {
+  .auth-register-name-fields {
     flex-direction: column;
     gap: 8px;
   }
 
-  input {
+  .auth-input {
     padding: 12px;
   }
 
-  .login-button {
+  .auth-login-button {
     padding: 14px;
-  }
-
-  .social-icons img {
-    width: 35px;
-    height: 35px;
   }
 }
 
 @media (max-width: 375px) {
-  .login-box {
+  .auth-login-box {
     padding: 20px;
     width: 110%;
-    max-width: 400px; 
+    max-width: 400px;
     margin-top: 150px;
-    
   }
 
-  .login-title {
+  .auth-login-title {
     font-size: 16px;
   }
 
-  .login-underline {
+  .auth-login-underline {
     width: 30%;
   }
 
-  .register-underline {
+  .auth-register-underline {
     width: 55%;
   }
 
-  .register-name-fields {
+  .auth-register-name-fields {
     flex-direction: column;
     gap: 8px;
   }
 
-  input {
+  .auth-input {
     padding: 12px;
   }
 
-  .login-button {
+  .auth-login-button {
     padding: 14px;
-  }
-
-  .social-icons img {
-    width: 35px;
-    height: 35px;
   }
 }

@@ -1,7 +1,5 @@
 import { Head, Link, useForm } from '@inertiajs/react';
 import "../../../css/Auth.css";
-import facebookIcon from "../../../assets/facebook.png";
-import googleIcon from "../../../assets/google.png";
 import MainLayout from "../../Layouts/MainLayout";
 import axios from 'axios';
 import { useState } from 'react';
@@ -56,56 +54,52 @@ const Login = ({ status, canResetPassword }) => {
 
     return (
         <MainLayout>
-            <div className="login-container">
+            <div className="auth-login-container">
                 <Head title="Přihlášení" />
 
-                {loginStatus && <div className="mb-4 text-sm font-medium text-green-600">{loginStatus}</div>}
+                {loginStatus && <div className="auth-message">{loginStatus}</div>}
 
-                <div className="login-box">
-                    <h2 className="login-title">Přihlášení zákazníka</h2>
-                    <div className="login-underline"></div>
+                <div className="auth-login-box">
+                    <h2 className="auth-login-title">Přihlášení zákazníka</h2>
+                    <div className="auth-login-underline"></div>
 
                     <form onSubmit={submit}>
                         <label>Email</label>
                         <input
-                            style={{backgroundColor: "#D9D9D9"}}
+                            className="auth-input"
                             type="email"
                             placeholder="Zadejte email"
                             value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
                             required
                         />
-                        {errors.email && <p className="error-text">{errors.email}</p>}
+                        {errors.email && <p className="auth-error-text">{errors.email}</p>}
 
                         <label>Heslo</label>
                         <input
-                            style={{backgroundColor: "#D9D9D9"}}
+                            className="auth-input"
                             type="password"
                             placeholder="Zadejte heslo"
                             value={data.password}
                             onChange={(e) => setData('password', e.target.value)}
                             required
                         />
-                        {errors.password && <p className="error-text">{errors.password}</p>}
+                        {errors.password && <p className="auth-error-text">{errors.password}</p>}
 
-                       
-
-                        <div className="forgot-password">
+                        <div className="auth-forgot-password">
                             {canResetPassword && (
                                 <Link href="/forgot-password">Zapomněli jste heslo?</Link>
                             )}
                         </div>
 
-                        <button type="submit" className="login-button" disabled={processing}>
+                        <button type="submit" className="auth-login-button" disabled={processing}>
                             Přihlásit se
                         </button>
                     </form>
 
-                    
-
-                    <p className="register-text">
+                    <p className="auth-register-text">
                         Pokud u nás ještě nemáte účet, můžete si{" "}
-                        <a href="/register" className="register-link">vytvořit účet</a> zde.
+                        <a href="/register" className="auth-register-link">vytvořit účet</a> zde.
                     </p>
                 </div>
             </div>
