@@ -5,6 +5,12 @@
   width: 100%;
   min-height: 100vh;
   padding-bottom: 60px;
+  opacity: 0; /* Před animací bude sekce neviditelná */
+  transition: opacity 1s ease-out;
+}
+
+.benefits.animate {
+  opacity: 1; /* Po zobrazení na stránce se sekce stane viditelnou */
 }
 
 .benefits-container {
@@ -13,6 +19,12 @@
   max-width: 1300px;
   width: 100%;
   gap: 100px;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.benefits.animate .benefits-container {
+  opacity: 1; /* Když je sekce viditelná, objeví se */
 }
 
 .benefits-image {
@@ -29,7 +41,6 @@
   position: relative;
   z-index: 2;
 }
-
 
 .benefits-image .dots {
   position: absolute;
@@ -137,7 +148,6 @@
 .buttons button:hover {
   background-color: #c68b1e;
 }
-
 
 @media (max-width: 1024px) {
   .benefits-container {

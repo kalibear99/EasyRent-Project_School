@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import "../../css/Benefits.css";
 import carsPicture from "../../assets/cars_picture.png";
 import dots from "../../assets/dots.png";
@@ -9,16 +10,22 @@ import icon4 from "../../assets/4.png";
 import "../../css/app.css";
 
 const Benefits = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Spustí animaci pouze jednou
+    threshold: 0.3, // Animace se spustí, když je element vidět alespoň z 30%
+  });
+
   return (
-    <section className="benefits">
+    <section 
+      className={`benefits ${inView ? "animate" : ""}`} 
+      ref={ref}
+    >
       <div className="benefits-container">
-       
         <div className="benefits-image">
           <img src={carsPicture} alt="Výběr aut" />
           <img src={dots} alt="Dekorace" className="dots" />
         </div>
 
-       
         <div className="benefits-content">
           <h2 className="benefits-title">Výhody, které oceníte</h2>
           <div className="benefits-underline"></div>
@@ -51,8 +58,6 @@ const Benefits = () => {
           </div>
 
           <div className="separator"></div>
-
-          
         </div>
       </div>
     </section>

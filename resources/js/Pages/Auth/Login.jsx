@@ -88,16 +88,7 @@ const Login = ({ status, canResetPassword }) => {
                         />
                         {errors.password && <p className="error-text">{errors.password}</p>}
 
-                        <div className="remember-me">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    checked={data.remember}
-                                    onChange={(e) => setData('remember', e.target.checked)}
-                                />
-                                Zapamatovat si mě
-                            </label>
-                        </div>
+                       
 
                         <div className="forgot-password">
                             {canResetPassword && (
@@ -110,11 +101,7 @@ const Login = ({ status, canResetPassword }) => {
                         </button>
                     </form>
 
-                    <p className="login-via-text">Přihlásit se přes</p>
-                    <div className="social-icons">
-                        <img src={facebookIcon} alt="Facebook" />
-                        <img src={googleIcon} alt="Google" />
-                    </div>
+                    
 
                     <p className="register-text">
                         Pokud u nás ještě nemáte účet, můžete si{" "}

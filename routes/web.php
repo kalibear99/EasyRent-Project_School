@@ -33,3 +33,4 @@ Route::get('/register', fn () => Inertia::render('Auth/Register'))->name('regist
 
 Route::get('/my-profile', fn () => Inertia::render('MyProfile'))->middleware('auth');
 Route::get('/rezervace', fn () => Inertia::render('YourReservations'))->middleware('auth');
+Route::get('/obchodni-podminky', fn () => Inertia::render('TermsAndConditions'));
