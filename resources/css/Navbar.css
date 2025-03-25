@@ -127,7 +127,7 @@
 @media (max-width: 768px) {
   .navbar {
     justify-content: space-between;
-    padding: 25px; 
+    padding : 30px !important
   }
   .logo {
     position: absolute;
@@ -184,6 +184,9 @@
 
 
 @media (max-width: 480px) {
+  .navbar{
+    padding : 30px !important
+  }
   .login-icon {
     right: 60px;   
     top: 50%;

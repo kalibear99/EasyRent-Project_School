@@ -8,10 +8,20 @@
   font-size: 82px;
   font-weight: 550;
   margin-top: 100px;
-  margin-bottom: 0px; 
+  margin-bottom: 80px; 
   color: #000000; 
   padding: 20px;
   border-radius: 10px;
+}
+
+.CarReservation-underline {
+  width: 25% !important;
+  height: 3px !important;
+  background-color: #e0a123 !important;
+  margin: 0 auto 50px auto !important;
+  margin-top: -90px !important;
+  display: block !important;
+  margin-bottom: 120px !important;
 }
 
 
@@ -165,7 +175,7 @@
 .Price-car-reservation {
   font-size: 60px;
   font-weight: medium;
-  margin-bottom: -40px;
+  margin-bottom: -10px;
   text-align: left;
 }
 
@@ -180,8 +190,17 @@
   .car-reservation-header {
     font-size: 60px;
     margin-top: 80px;
+    margin-bottom: 20px;
   }
-
+  .CarReservation-underline {
+    width: 35% !important;
+    height: 3px !important;
+    background-color: #e0a123 !important;
+    margin: 0 auto 50px auto !important;
+    margin-top: 0px !important;
+    display: block !important;
+    margin-bottom: 80px !important;
+  }
   .car-reservation-container {
     flex-direction: column; 
     padding: 20px;
@@ -219,6 +238,7 @@
   .car-reservation-header {
     font-size: 50px;
     margin-top: 50px;
+    margin-bottom: 20px;
   }
 
   .car-reservation-container {
@@ -267,6 +287,7 @@
   .car-reservation-header {
     font-size: 40px;
     margin-top: 50px;
+    margin-bottom: 20px;
   }
 
   .car-reservation-container {

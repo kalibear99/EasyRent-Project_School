@@ -66,7 +66,7 @@ const CarReservation = () => {
     <MainLayout>
       <div>
         <div className="car-reservation-header">Rezervace Vozidla</div>
-
+        <div className="CarReservation-underline"></div>
         <div className="car-reservation-container">
           <div className="car-reservation-overview">
             <h1 className="Price-car-reservation">{car.name}</h1>
