@@ -80,9 +80,9 @@
   .MyProfile-Textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #444;
-    background-color: #222;
-    color: white;
+    border: 1px solid #444 !important;
+    background-color: #222 !important;
+    color: white !important;
     border-radius: 5px;
     outline: none;
   }

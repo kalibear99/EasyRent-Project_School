@@ -17,6 +17,7 @@ Route::get('/kontakt', fn () => Inertia::render('Contact'));
 Route::get('/vyber-aut', [CarController::class, 'index']);
 Route::get('/vyber-aut/{id}', [CarController::class, 'reservation'])->name('car.reservation');
 Route::get('/o-nas', fn () => Inertia::render('Onas'));
+Route::get('/obchodni-podminky', fn () => Inertia::render('TermsAndConditions'));
 
 Route::get('/dashboard', fn () => Inertia::render('Dashboard'))
     ->middleware(['auth', 'verified'])
@@ -24,7 +25,7 @@ Route::get('/dashboard', fn () => Inertia::render('Dashboard'))
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.updateProfile');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
@@ -33,4 +34,3 @@ Route::get('/register', fn () => Inertia::render('Auth/Register'))->name('regist
 
 Route::get('/my-profile', fn () => Inertia::render('MyProfile'))->middleware('auth');
 Route::get('/rezervace', fn () => Inertia::render('YourReservations'))->middleware('auth');
-Route::get('/obchodni-podminky', fn () => Inertia::render('TermsAndConditions'));
