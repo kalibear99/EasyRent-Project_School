@@ -14,7 +14,7 @@
 }
 
 .CarCards-underline {
-  width: 55% !important;
+  width: 35% !important;
   height: 3px !important;
   background-color: #e0a123 !important;
   margin: 0 auto 50px auto !important;
@@ -181,7 +181,10 @@
     padding: 15px !important;
     margin-bottom: 200px !important;
   }
-
+  .CarCards-underline
+{
+  width: 50% !important;
+}
   h1 {
     font-size: 50px !important;
     margin: 60px 0 15px 0 !important;
