@@ -21,16 +21,23 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("loading");
-
+  
     try {
       const response = await axios.post("http://localhost:8000/api/contact", formData);
       setStatus("success");
       setFormData({ email: "", phone: "", message: "" });
-      console.log(formData)
+      console.log(formData);
     } catch (error) {
-      setStatus("error");
+      console.error("Chyba při odesílání kontaktního formuláře:", error);
+      
+      if (error.response && error.response.data) {
+        setStatus(`error: ${error.response.data.message || JSON.stringify(error.response.data)}`);
+      } else {
+        setStatus("error: Došlo k chybě při odesílání formuláře");
+      }
     }
   };
+  
 
   return (
     <MainLayout>
