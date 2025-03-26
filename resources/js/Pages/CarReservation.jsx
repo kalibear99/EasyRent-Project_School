@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePage } from "@inertiajs/react";
 import axios from "axios";
 import "../../css/CarReservation.css";
@@ -6,8 +6,16 @@ import calendarIcon from "../../assets/icon_calendar.png";
 import clockIcon from "../../assets/icon_clock.png";
 import MainLayout from "@/Layouts/MainLayout";
 import "../../css/app.css";
+import { router } from '@inertiajs/react'
 
 const CarReservation = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+      const token = localStorage.getItem('auth_token');
+      setIsLoggedIn(!!token);
+    }, []);
+
   const { car } = usePage().props;
 
   const getCurrentDate = () => {
@@ -119,17 +127,27 @@ const CarReservation = () => {
               </p>
             </div>
 
-            <button
-              className="car-reservation-reserve-button"
-              onClick={handleReservation}
-              disabled={loading || isSubmitted}
-              style={{
-                backgroundColor: isSubmitted ? "#ccc" : "#f4a742",
-                cursor: isSubmitted ? "not-allowed" : "pointer",
-              }}
-            >
-              {isSubmitted ? "Rezervováno" : loading ? "Rezervuji..." : "Rezervovat"}
-            </button>
+            {isLoggedIn ? (
+              <button
+                className="car-reservation-reserve-button"
+                onClick={handleReservation}
+                disabled={loading || isSubmitted}
+                style={{
+                  backgroundColor: isSubmitted ? "#ccc" : "#f4a742",
+                  cursor: isSubmitted ? "not-allowed" : "pointer",
+                }}
+              >
+                {isSubmitted ? "Rezervováno" : loading ? "Rezervuji..." : "Rezervovat"}
+              </button>
+            ) : (
+              <button
+                className="car-reservation-reserve-button"
+                style={{ backgroundColor: "#ccc", cursor: "pointer" }}
+                onClick={() => router.visit("/login")}
+              >
+                Jenom pro přihlášené!
+              </button>
+            )}
 
             <div className="car-reservation-info">
               <div className="car-reservation-info-grid">
