@@ -185,14 +185,14 @@
   font-weight: 100;
 }
 .responsive-img {
-  border-radius: 15px; /* Zaoblené rohy obrázku */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Plynulá animace pro efekt změny */
+  border-radius: 15px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-/* Při najetí myší na obrázek */
+
 .responsive-img:hover {
-  transform: scale(1.05); /* Obrázek se zvětší při najetí myší */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Přidání stínu pro efekt */
+  transform: scale(1.05); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }
 
 
