@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../css/YourReservations.css?v=1";
 import axios from "axios";
-import backArrow from "../../assets/back-arrow.png"; // Import obrázku
+import backArrow from "../../assets/back-arrow.png"; 
 
 const YourReservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -39,7 +39,7 @@ const YourReservations = () => {
 
   return (
     <div className="your-reservations-page-container">
-      {/* Šipka zpět */}
+      {}
       <div className="back-arrow-container">
         <a href="/">
           <img src={backArrow} alt="Zpět" className="back-arrow" />
