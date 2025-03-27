@@ -2,6 +2,7 @@
   width: 70% !important;
   margin: auto !important;
   padding: 20px !important;
+  margin-bottom: 100px !important;
 }
 
 .CarCards-title {
@@ -171,7 +172,7 @@
 }
 
 .calendar-icon img {
-  max-width: 50% !important;
+  max-width: 40% !important;
   object-fit: contain !important;
 }
 @media (min-width: 1025px) {
