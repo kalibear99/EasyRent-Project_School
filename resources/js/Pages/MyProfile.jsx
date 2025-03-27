@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/MyProfile.css";
 import "../../css/app.css";
-import backArrow from "../../assets/orange-back-arrow.png"; // Import obrázku šipky zpět
+import backArrow from "../../assets/orange-back-arrow.png"; 
 
 const MyProfile = () => {
   const [firstName, setFirstName] = useState("");
@@ -55,8 +55,7 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="MyProfile-Container">
-      {/* Šipka zpět */}
+    <div className="MyProfile-Container">      
       <div className="back-arrow-container">
         <a href="/">
           <img src={backArrow} alt="Zpět" className="back-arrow" />

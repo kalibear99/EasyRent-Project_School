@@ -26,24 +26,24 @@
 }
 
 .auth-login-underline {
-  width: 26%;
+  width: 26%; 
   height: 3px;
   background: #ffb400;
-  margin: 10px auto 20px;
+  margin: 10px auto 20px; 
 }
 
 .auth-register-title {
   color: black;
   font-size: 22px;
   font-weight: bold;
-  text-align: center;
+  text-align: center; 
 }
 
 .auth-register-underline {
   width: 40%; 
   height: 3px;
   background: #ffb400;
-  margin: 10px auto 20px;
+  margin: 10px auto 20px; 
 }
 
 .auth-input {

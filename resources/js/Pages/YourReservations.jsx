@@ -38,8 +38,7 @@ const YourReservations = () => {
   };
 
   return (
-    <div className="your-reservations-page-container">
-      {}
+    <div className="your-reservations-page-container">     
       <div className="back-arrow-container">
         <a href="/">
           <img src={backArrow} alt="Zpět" className="back-arrow" />
