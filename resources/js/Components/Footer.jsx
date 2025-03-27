@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="footer-container">
 
         <div className="footer-left">
-          {/* Odkaz na úvodní stránku */}
+          {}
           <Link href="/">
             <img src={logo} alt="Logo" className="footer-logo" />
           </Link>
