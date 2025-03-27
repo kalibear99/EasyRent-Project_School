@@ -16,7 +16,25 @@
     font-weight: bold;
     text-align: center;
   }
-  
+
+ .back-arrow-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.back-arrow {
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.back-arrow:hover {
+  transform: scale(1.2);
+}
+
 
   .MyProfile-Underline {
     width: 80px;

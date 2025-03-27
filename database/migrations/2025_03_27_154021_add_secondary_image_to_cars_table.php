@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->after('reservation_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::table('cars', function (Blueprint $table) {
+            $table->string('image_secondary')->nullable()->after('image');
         });
-        
     }
 
-    
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::table('orders', function (Blueprint $table) {
-            //
+        Schema::table('cars', function (Blueprint $table) {
+            $table->string('image_secondary')->nullable()->after('image');
         });
     }
 };

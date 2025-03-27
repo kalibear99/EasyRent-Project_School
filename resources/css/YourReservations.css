@@ -1,8 +1,10 @@
 
 .your-reservations-page-container {
+  
     max-width: 1024px;
-    margin: 40px auto;
+    margin: 100px auto;
     padding: 20px;
+    
     background-color: #f4f7f6;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -26,7 +28,24 @@
     border-radius: 2px;
   }
   
-  
+  /* Šipka zpět */
+.back-arrow-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.back-arrow {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.back-arrow:hover {
+  transform: scale(1.1);
+}
+
   .your-reservations-list {
     display: flex;
     flex-direction: column;

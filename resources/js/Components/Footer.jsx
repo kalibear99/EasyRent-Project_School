@@ -10,15 +10,18 @@ const Footer = () => {
       <div className="footer-container">
 
         <div className="footer-left">
-          <img src={logo} alt="Logo" className="footer-logo" />
+          {/* Odkaz na úvodní stránku */}
+          <Link href="/">
+            <img src={logo} alt="Logo" className="footer-logo" />
+          </Link>
         </div>
 
         <div className="footer-center">
           <h3>EasyRent</h3>
-          <Link href="/vyber-aut"><p>Výběr aut</p></Link> {/* Používáme Inertia Link */}
-          <Link href="/o-nas"><p>O nás</p></Link> {/* Používáme Inertia Link */}
-          <Link href="/kontakt"><p>Kontakt</p></Link> {/* Používáme Inertia Link */}
-          <Link href="/obchodni-podminky"><p>Obchodní podmínky</p></Link> {/* Používáme Inertia Link */}
+          <Link href="/vyber-aut"><p>Výběr aut</p></Link>
+          <Link href="/o-nas"><p>O nás</p></Link>
+          <Link href="/kontakt"><p>Kontakt</p></Link>
+          <Link href="/obchodni-podminky"><p>Obchodní podmínky</p></Link>
         </div>
 
         <div className="footer-right">

@@ -160,8 +160,11 @@ const CarReservation = () => {
                 <p className="car-reservation-deposit">Vratná kauce od <span className="car-reservation-bold-text">{car.deposit.toLocaleString()} Kč</span></p>
               </div>
             </div>
+            
           </div>
+          <img src={car.image_secondary} alt={car.name} className="responsive-img" />
         </div>
+        
       </div>
     </MainLayout>
   );

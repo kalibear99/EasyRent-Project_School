@@ -1,5 +1,4 @@
 import React from "react";
-import { useInView } from "react-intersection-observer";
 import "../../css/Benefits.css";
 import carsPicture from "../../assets/cars_picture.png";
 import dots from "../../assets/dots.png";
@@ -10,16 +9,8 @@ import icon4 from "../../assets/4.png";
 import "../../css/app.css";
 
 const Benefits = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Spustí animaci pouze jednou
-    threshold: 0.3, // Animace se spustí, když je element vidět alespoň z 30%
-  });
-
   return (
-    <section 
-      className={`benefits ${inView ? "animate" : ""}`} 
-      ref={ref}
-    >
+    <section className="benefits">
       <div className="benefits-container">
         <div className="benefits-image">
           <img src={carsPicture} alt="Výběr aut" />
@@ -35,25 +26,25 @@ const Benefits = () => {
               <div className="icon-box">
                 <img src={icon1} alt="Auto ikona" />
               </div>
-              <p>Caesare conspicuum cuius contemplans per imitari luce prodisset dedecore.</p>
+              <p>Naše vozidla procházejí pravidelnými kontrolami a údržbou, abychom zajistili, že budou vždy v perfektním technickém stavu. </p>
             </div>
             <div className="benefit-item">
               <div className="icon-box">
                 <img src={icon2} alt="Nastavení ikona" />
               </div>
-              <p>Medioсrium nec pretioso id flagrans generum amore repentina oblato ut.</p>
+              <p>S námi je půjčení auta rychlé a jednoduché. Díky efektivnímu systému rezervace můžete auto převzít během několika minut.</p>
             </div>
             <div className="benefit-item">
               <div className="icon-box">
                 <img src={icon3} alt="Lokace ikona" />
               </div>
-              <p>Istam fortius sum parentemque dicendi tueri liberius id nostro debeo.</p>
+              <p>Naše služby jsou pravidelně hodnoceny velmi pozitivně. Mnozí naši zákazníci oceňují nejen kvalitu našich vozidel, ale také vynikající zákaznický servis.</p>
             </div>
             <div className="benefit-item">
               <div className="icon-box">
                 <img src={icon4} alt="Hodnocení ikona" />
               </div>
-              <p>Sui et pertaesus Veternensi e imperatoris sorore atque natus in.</p>
+              <p>Naše vozidla jsou dostupná na různých místech, a to jak v městských oblastech, tak v turistických destinacích.</p>
             </div>
           </div>
 

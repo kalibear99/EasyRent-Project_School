@@ -184,6 +184,16 @@
   font-size: 30px;
   font-weight: 100;
 }
+.responsive-img {
+  border-radius: 15px; /* Zaoblené rohy obrázku */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Plynulá animace pro efekt změny */
+}
+
+/* Při najetí myší na obrázek */
+.responsive-img:hover {
+  transform: scale(1.05); /* Obrázek se zvětší při najetí myší */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Přidání stínu pro efekt */
+}
 
 
 @media (max-width: 1024px) {
@@ -258,7 +268,7 @@
   }
 
   .car-reservation-summary p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .car-reservation-label {
@@ -278,8 +288,8 @@
   }
 
   .car-reservation-reserve-button {
-    font-size: 12px;
-    padding: 8px;
+    font-size: 16px;
+    padding: 12px;
   }
 }
 
@@ -287,9 +297,9 @@
   .car-reservation-header {
     font-size: 40px;
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
-
+ 
   .car-reservation-container {
     padding: 10px;
   }
@@ -308,7 +318,7 @@
   }
 
   .car-reservation-summary p {
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .car-reservation-info-grid {
@@ -324,7 +334,7 @@
   }
 
   .car-reservation-reserve-button {
-    font-size: 10px;
-    padding: 6px;
+    font-size: 14px;
+    padding: 10px;
   }
 }

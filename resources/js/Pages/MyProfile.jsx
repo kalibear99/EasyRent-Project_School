@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../../css/MyProfile.css"; 
+import "../../css/MyProfile.css";
 import "../../css/app.css";
+import backArrow from "../../assets/orange-back-arrow.png"; // Import obrázku šipky zpět
 
 const MyProfile = () => {
   const [firstName, setFirstName] = useState("");
@@ -20,7 +21,6 @@ const MyProfile = () => {
     });
   }, []);
 
-
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -38,10 +38,10 @@ const MyProfile = () => {
     if (image) {
       formData.append("profile_picture", image);
     }
-  
+
     try {
       await axios.post("/profile/update", formData, {
-        headers: { 
+        headers: {
           "Content-Type": "multipart/form-data",
           "X-Requested-With": "XMLHttpRequest",
           "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
@@ -53,11 +53,16 @@ const MyProfile = () => {
       setMessage("Chyba při ukládání změn.");
     }
   };
-  
-  
 
   return (
     <div className="MyProfile-Container">
+      {/* Šipka zpět */}
+      <div className="back-arrow-container">
+        <a href="/">
+          <img src={backArrow} alt="Zpět" className="back-arrow" />
+        </a>
+      </div>
+
       <h1 className="MyProfile-Title">Můj Profil</h1>
       <div className="MyProfile-Underline"></div>
 

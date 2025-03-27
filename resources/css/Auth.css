@@ -22,25 +22,28 @@
   color: black;
   font-size: 22px;
   font-weight: bold;
-  text-align: left;
+  text-align: center; /* Zajištění centrování titulku */
 }
 
 .auth-login-underline {
-  width: 25%;
+  width: 26%; /* Šířka podtržítka bude dynamicky závislá na textu */
   height: 3px;
   background: #ffb400;
-  margin: 10px 0 20px;
-  margin-left: 20px;
-  margin-bottom: 50px;
+  margin: 10px auto 20px; /* Centrované podtržítko */
+}
+
+.auth-register-title {
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center; /* Zajištění centrování titulku */
 }
 
 .auth-register-underline {
-  width: 40%;
+  width: 40%; /* Šířka podtržítka bude dynamicky závislá na textu */
   height: 3px;
   background: #ffb400;
-  margin: 10px 0 20px;
-  margin-left: 22px;
-  margin-bottom: 50px;
+  margin: 10px auto 20px; /* Centrované podtržítko */
 }
 
 .auth-input {
@@ -50,7 +53,6 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-top: 5px;
-  
 }
 
 .auth-error-text {
@@ -133,7 +135,7 @@
   }
 
   .auth-login-underline {
-    width: 30%;
+    width: 20%;
   }
 
   .auth-register-underline {
@@ -158,7 +160,7 @@
   }
 
   .auth-login-underline {
-    width: 30%;
+    width: 20%;
   }
 
   .auth-register-underline {
