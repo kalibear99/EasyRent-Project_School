@@ -4,33 +4,35 @@ import axios from "axios";
 
 const YourReservations = () => {
   const [reservations, setReservations] = useState([]);
+  const [userId, setUserId] = useState(null);  
 
   useEffect(() => {
     axios.get("/api/reservations", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
-      .then((response) => setReservations(response.data))
+      .then((response) => {
+        console.log("Data z API:", response.data); // Debug: Podívej se do konzole
+        setReservations(response.data);
+      })
       .catch((error) => console.error("Chyba při načítání rezervací:", error));
   }, []);
-
-  const calculateTotalPrice = (reservation) => {
-    const pickupDate = new Date(reservation.pickup_datetime);
-    const returnDate = new Date(reservation.return_datetime);
-    const days = Math.ceil((returnDate - pickupDate) / (1000 * 60 * 60 * 24));
-    return reservation.car.price * days;
-  };
-
+  
+  
   const handlePayment = async (reservation) => {
     try {
-      const response = await axios.post("/api/orders", {
-        reservation_id: reservation.id,
-        total_price: calculateTotalPrice(reservation),
+      const response = await axios.put(`/api/reservations/${reservation.id}`, {
+        status: "paid"
       }, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } });
-
-      alert(response.data.message);
+  
+      alert("Rezervace byla zaplacena!");
+      setReservations((prevReservations) =>
+        prevReservations.map((r) => (r.id === reservation.id ? { ...r, status: "paid" } : r))
+      );
     } catch (error) {
-      console.error("Chyba při vytváření objednávky:", error);
-      alert("Nepodařilo se vytvořit objednávku.");
+      console.error("Chyba při platbě:", error);
+      alert("Nepodařilo se zaplatit rezervaci.");
     }
   };
+  
+  
 
   return (
     <div className="your-reservations-page-container">
@@ -41,23 +43,17 @@ const YourReservations = () => {
         {reservations.length > 0 ? (
           reservations.map((reservation) => (
             <div key={reservation.id} className="your-reservation-item">
-              <div className="your-reservation-header">
-                <h2 className="your-car-name">{reservation.car.name}</h2>
-                <span className="your-reservation-date">{reservation.pickup_datetime} - {reservation.return_datetime}</span>
-              </div>
-              <div className="your-reservation-details">
-                <p>Cena za den: <strong>{reservation.car.price} Kč</strong></p>
-                <p>
-                  <strong>Celková cena: {calculateTotalPrice(reservation)} Kč</strong>
-                </p>
-              </div>
-              <button className="your-pay-button" onClick={() => handlePayment(reservation)}>
-                Zaplatit
-              </button>
+              <h2>{reservation.car.name}</h2>
+              <p>{reservation.pickup_datetime} - {reservation.return_datetime}</p>
+              <p>Celková cena: {reservation.total_price} Kč</p>
+              <p>Status: {reservation.status}</p>
+              {reservation.status === "pending" && (
+                <button onClick={() => handlePayment(reservation)}>Zaplatit</button>
+              )}
             </div>
           ))
         ) : (
-          <p className="no-reservations-text">Nemáte žádné rezervace.</p>
+          <p>Nemáte žádné rezervace.</p>
         )}
       </div>
     </div>
