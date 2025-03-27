@@ -22,28 +22,28 @@
   color: black;
   font-size: 22px;
   font-weight: bold;
-  text-align: center; /* Zajištění centrování titulku */
+  text-align: center; 
 }
 
 .auth-login-underline {
-  width: 26%; /* Šířka podtržítka bude dynamicky závislá na textu */
+  width: 26%; 
   height: 3px;
   background: #ffb400;
-  margin: 10px auto 20px; /* Centrované podtržítko */
+  margin: 10px auto 20px; 
 }
 
 .auth-register-title {
   color: black;
   font-size: 22px;
   font-weight: bold;
-  text-align: center; /* Zajištění centrování titulku */
+  text-align: center; 
 }
 
 .auth-register-underline {
-  width: 40%; /* Šířka podtržítka bude dynamicky závislá na textu */
+  width: 40%; 
   height: 3px;
   background: #ffb400;
-  margin: 10px auto 20px; /* Centrované podtržítko */
+  margin: 10px auto 20px; 
 }
 
 .auth-input {
