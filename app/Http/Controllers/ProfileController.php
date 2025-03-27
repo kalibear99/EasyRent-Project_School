@@ -21,7 +21,7 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
 
-        // Opravená validace
+        
         $request->validate([
             'first_name' => 'nullable|string|max:255',
             'last_name' => 'nullable|string|max:255',
@@ -29,19 +29,19 @@ class ProfileController extends Controller
             'profile_picture' => 'nullable|image|max:2048',
         ]);
 
-        // Pokud je nahrán nový obrázek
+        
         if ($request->hasFile('profile_picture')) {
-            // Smazání starého obrázku (pokud existuje)
+            
             if ($user->profile_picture) {
                 Storage::disk('public')->delete(basename($user->profile_picture));
             }
 
-            // Uložení nového obrázku
+            
             $imagePath = $request->file('profile_picture')->store('profile_pictures', 'public');
             $user->profile_picture = "/storage/" . $imagePath;
         }
 
-        // Aktualizace uživatelských informací
+        
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->bio = $request->bio;
