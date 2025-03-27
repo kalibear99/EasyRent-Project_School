@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { usePage } from "@inertiajs/react";
 import axios from "axios";
 import "../../css/CarReservation.css";
+import "../../css/app.css";
 import MainLayout from "@/Layouts/MainLayout";
 import { router } from "@inertiajs/react";
 
 const CarReservation = () => {
   const { auth, car } = usePage().props;
-  const user = auth.user || null; // Získání přihlášeného uživatele
-  const isLoggedIn = !!user;
+  const user = auth.user || null;
 
   const getCurrentDate = () => new Date().toISOString().split("T")[0];
 
@@ -19,13 +19,15 @@ const CarReservation = () => {
   const [days, setDays] = useState(1);
   const [loading, setLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   if (!car) return <div className="loading">Načítání...</div>;
 
   const totalPrice = days * car.price;
 
   useEffect(() => {
-    // Přepočítat počet dní při změně dat
+    const token = localStorage.getItem('auth_token');
+    setIsLoggedIn(!!token);
     const pickup = new Date(pickupDate);
     const returnD = new Date(returnDate);
     const diffDays = Math.max(1, Math.ceil((returnD - pickup) / (1000 * 60 * 60 * 24)));
@@ -46,7 +48,7 @@ const CarReservation = () => {
         car_id: car.id,
         pickup_datetime: pickupDateTime,
         return_datetime: returnDateTime,
-        status: "pending", // Přidáno pro správu statusu
+        status: "pending",
       });
   
       const response = await axios.post("/api/reservations", {
@@ -54,7 +56,7 @@ const CarReservation = () => {
         car_id: car.id,
         pickup_datetime: pickupDateTime,
         return_datetime: returnDateTime,
-        total_price: totalPrice, // Přidáno, protože už nemáme model Order
+        total_price: totalPrice,
         status: "pending",
       });
   
@@ -90,13 +92,23 @@ const CarReservation = () => {
             <div className="car-reservation-date-time">
               <div className="car-reservation-date-block">
                 <p className="car-reservation-label">Datum převzetí</p>
-                <input type="date" value={pickupDate} onChange={(e) => setPickupDate(e.target.value)} />
+                <input 
+                  type="date" 
+                  value={pickupDate} 
+                  onChange={(e) => setPickupDate(e.target.value)}
+                  min={getCurrentDate()}
+                />
                 <input type="time" value={pickupTime} onChange={(e) => setPickupTime(e.target.value)} />
               </div>
 
               <div className="car-reservation-date-block">
                 <p className="car-reservation-label">Datum odevzdání</p>
-                <input type="date" value={returnDate} onChange={(e) => setReturnDate(e.target.value)} />
+                <input 
+                  type="date" 
+                  value={returnDate} 
+                  onChange={(e) => setReturnDate(e.target.value)}
+                  min={pickupDate} 
+                />
                 <input type="time" value={returnTime} onChange={(e) => setReturnTime(e.target.value)} />
               </div>
             </div>
