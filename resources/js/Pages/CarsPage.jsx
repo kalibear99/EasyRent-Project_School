@@ -7,10 +7,23 @@ import acuraMDX from "../../assets/acura-mdx.png";
 import acuraRDX from "../../assets/acura-rdx.png";
 
 const cars = [
-  { name: "Hyundai i30", description: "Vinnalit le quibusdam exducta nepelicantur quibus expeledicat armo quia.", image: hyundai },
-  { name: "Acura MDX", description: "Vinnalit le quibusdam exducta nepelicantur quibus expeledicat armo quia.", image: acuraMDX },
-  { name: "Acura RDX", description: "Vinnalit le quibusdam exducta nepelicantur quibus expeledicat armo quia.", image: acuraRDX },
+  { 
+    name: "Hyundai i30", 
+    description: "Kompaktní hatchback s moderním designem, skvělou spotřebou a komfortním interiérem vhodným pro městské i dálkové jízdy.", 
+    image: hyundai 
+  },
+  { 
+    name: "Acura MDX", 
+    description: "Luxusní SUV s výkonným motorem, pohonem všech kol a špičkovou výbavou pro maximální pohodlí a bezpečnost na cestách.", 
+    image: acuraMDX 
+  },
+  { 
+    name: "Acura RDX", 
+    description: "Dynamické a prostorné SUV s pokročilou technologií, sportovním designem a prémiovými materiály v interiéru.", 
+    image: acuraRDX 
+  },
 ];
+
 
 const CarsPage = () => {
   return (
