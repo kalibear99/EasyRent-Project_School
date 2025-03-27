@@ -9,7 +9,7 @@ const YourReservations = () => {
   useEffect(() => {
     axios.get("/api/reservations", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
       .then((response) => {
-        console.log("Data z API:", response.data); // Debug: Podívej se do konzole
+        console.log("Data z API:", response.data);
         setReservations(response.data);
       })
       .catch((error) => console.error("Chyba při načítání rezervací:", error));

@@ -56,13 +56,13 @@ const Login = ({ status, canResetPassword }) => {
         <MainLayout>
             <div className="auth-login-container">
                 <Head title="Přihlášení" />
-
-                {loginStatus && <div className="auth-message">{loginStatus}</div>}
-
+    
                 <div className="auth-login-box">
                     <h2 className="auth-login-title">Přihlášení zákazníka</h2>
                     <div className="auth-login-underline"></div>
-
+    
+                    {loginStatus && <div className="auth-message">{loginStatus}</div>}
+    
                     <form onSubmit={submit}>
                         <label>Email</label>
                         <input
@@ -74,7 +74,7 @@ const Login = ({ status, canResetPassword }) => {
                             required
                         />
                         {errors.email && <p className="auth-error-text">{errors.email}</p>}
-
+    
                         <label>Heslo</label>
                         <input
                             className="auth-input"
@@ -85,18 +85,18 @@ const Login = ({ status, canResetPassword }) => {
                             required
                         />
                         {errors.password && <p className="auth-error-text">{errors.password}</p>}
-
+    
                         <div className="auth-forgot-password">
                             {canResetPassword && (
                                 <Link href="/forgot-password">Zapomněli jste heslo?</Link>
                             )}
                         </div>
-
+    
                         <button type="submit" className="auth-login-button" disabled={processing}>
                             Přihlásit se
                         </button>
                     </form>
-
+    
                     <p className="auth-register-text">
                         Pokud u nás ještě nemáte účet, můžete si{" "}
                         <a href="/register" className="auth-register-link">vytvořit účet</a> zde.
