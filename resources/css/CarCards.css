@@ -97,7 +97,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
   text-align: center !important;
   width: 320px !important;
-  height: 450px !important; /* Stejná výška všech karet */
+  height: 450px !important; 
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -107,7 +107,7 @@
 
 .car-card img {
   width: 100% !important;
-  height: 200px !important; /* Stejná výška obrázků */
+  height: 200px !important; 
   object-fit: cover !important;
 }
 
@@ -137,7 +137,7 @@
   text-align: left !important;
   padding: 0 15px !important;
   line-height: 1.5 !important;
-  flex-grow: 1 !important; /* Zajišťuje stejné rozložení */
+  flex-grow: 1 !important; 
 }
 
 .reserve-container {
@@ -151,14 +151,14 @@
 
 .reserve-button {
   background: linear-gradient(135deg, #f7a12c, #e0851a) !important;
-  color: black !important;  /* Černý text */
+  color: black !important;  
   border: none !important;
   padding: 12px 0 !important;
   cursor: pointer !important;
   width: 65% !important;
   border-radius: 8px !important;
   font-size: 16px !important;
-  font-weight: 500 !important; /* Ne tak tučné */
+  font-weight: 500 !important; 
   text-align: center !important;
   position: relative !important;
   transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease !important;
@@ -177,8 +177,8 @@
 
 
 .calendar-icon {
-  width: 46px !important; /* Přizpůsobeno tlačítku */
-  height: 46px !important; /* Stejná výška jako tlačítko */
+  width: 46px !important; 
+  height: 46px !important; 
   background-color: #3a3a3a !important;
   border-radius: 5px !important;
   display: flex !important;
@@ -192,19 +192,19 @@
 }
 @media (min-width: 1025px) {
   .container {
-    width: 75% !important; /* Lepší využití prostoru */
+    width: 75% !important; 
     padding: 20px !important;
   }
 
   .carcards-car-list {
     grid-template-columns: repeat(3, 1fr) !important;
-    column-gap: 30px !important; /* Větší mezery mezi kartami */
+    column-gap: 30px !important; 
     row-gap: 50px !important;
-    justify-content: center !important; /* Zarovnání pro lepší rozložení */
+    justify-content: center !important; 
   }
 
   .car-card {
-    width: 320px !important; /* Zajištění stejné šířky */
+    width: 320px !important; 
     height: 460px !important;
   }
 }
@@ -215,12 +215,12 @@
   }
 
   .carcards-car-list {
-    grid-template-columns: repeat(3, 1fr) !important; /* Stále 3 sloupce, ale lepší rozložení */
-    column-gap: 40px !important; /* Ještě více prostoru mezi kartami */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    column-gap: 40px !important; 
   }
 
   .car-card {
-    width: 340px !important; /* Trochu větší karty pro větší obrazovky */
+    width: 340px !important; 
     height: 470px !important;
   }
 }
@@ -245,7 +245,7 @@
   }
 
   .car-card {
-    width: 45% !important; /* Lepší přizpůsobení pro tablety */
+    width: 45% !important; 
   }
 
   .reserve-button {
