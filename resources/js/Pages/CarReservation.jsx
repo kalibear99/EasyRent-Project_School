@@ -2,26 +2,15 @@ import React, { useState, useEffect } from "react";
 import { usePage } from "@inertiajs/react";
 import axios from "axios";
 import "../../css/CarReservation.css";
-import calendarIcon from "../../assets/icon_calendar.png";
-import clockIcon from "../../assets/icon_clock.png";
 import MainLayout from "@/Layouts/MainLayout";
-import "../../css/app.css";
-import { router } from '@inertiajs/react'
+import { router } from "@inertiajs/react";
 
 const CarReservation = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { auth, car } = usePage().props;
+  const user = auth.user || null; // Získání přihlášeného uživatele
+  const isLoggedIn = !!user;
 
-  useEffect(() => {
-      const token = localStorage.getItem('auth_token');
-      setIsLoggedIn(!!token);
-    }, []);
-
-  const { car } = usePage().props;
-
-  const getCurrentDate = () => {
-    const today = new Date();
-    return today.toISOString().split("T")[0]; 
-  };
+  const getCurrentDate = () => new Date().toISOString().split("T")[0];
 
   const [pickupDate, setPickupDate] = useState(getCurrentDate());
   const [pickupTime, setPickupTime] = useState("13:30");
@@ -31,36 +20,47 @@ const CarReservation = () => {
   const [loading, setLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  if (!car) {
-    return <div className="loading">Načítání...</div>;
-  }
+  if (!car) return <div className="loading">Načítání...</div>;
 
   const totalPrice = days * car.price;
 
+  useEffect(() => {
+    // Přepočítat počet dní při změně dat
+    const pickup = new Date(pickupDate);
+    const returnD = new Date(returnDate);
+    const diffDays = Math.max(1, Math.ceil((returnD - pickup) / (1000 * 60 * 60 * 24)));
+    setDays(diffDays);
+  }, [pickupDate, returnDate]);
+
   const handleReservation = async () => {
-    if (isSubmitted) return;
-
+    if (isSubmitted || !isLoggedIn) return;
+  
     setLoading(true);
-
+  
     try {
       const pickupDateTime = `${pickupDate} ${pickupTime}:00`;
       const returnDateTime = `${returnDate} ${returnTime}:00`;
-
-      console.log("Odesílám data:", {
+  
+      console.log("Odesílám rezervaci:", {
+        user_id: user.id,
         car_id: car.id,
         pickup_datetime: pickupDateTime,
         return_datetime: returnDateTime,
+        status: "pending", // Přidáno pro správu statusu
       });
-
+  
       const response = await axios.post("/api/reservations", {
+        user_id: user.id,
         car_id: car.id,
         pickup_datetime: pickupDateTime,
         return_datetime: returnDateTime,
+        total_price: totalPrice, // Přidáno, protože už nemáme model Order
+        status: "pending",
       });
-
-      console.log("Odpověď ze serveru:", response);
+  
+      console.log("Odpověď:", response);
       alert("Rezervace byla úspěšná!");
-
+  
       setIsSubmitted(true);
     } catch (error) {
       console.error("Chyba při rezervaci:", error.response?.data || error);
@@ -68,7 +68,7 @@ const CarReservation = () => {
     } finally {
       setLoading(false);
     }
-  };
+  };  
 
   return (
     <MainLayout>
@@ -90,30 +90,14 @@ const CarReservation = () => {
             <div className="car-reservation-date-time">
               <div className="car-reservation-date-block">
                 <p className="car-reservation-label">Datum převzetí</p>
-                <input
-                  type="date"
-                  value={pickupDate}
-                  onChange={(e) => setPickupDate(e.target.value)}
-                />
-                <input
-                  type="time"
-                  value={pickupTime}
-                  onChange={(e) => setPickupTime(e.target.value)}
-                />
+                <input type="date" value={pickupDate} onChange={(e) => setPickupDate(e.target.value)} />
+                <input type="time" value={pickupTime} onChange={(e) => setPickupTime(e.target.value)} />
               </div>
 
               <div className="car-reservation-date-block">
                 <p className="car-reservation-label">Datum odevzdání</p>
-                <input
-                  type="date"
-                  value={returnDate}
-                  onChange={(e) => setReturnDate(e.target.value)}
-                />
-                <input
-                  type="time"
-                  value={returnTime}
-                  onChange={(e) => setReturnTime(e.target.value)}
-                />
+                <input type="date" value={returnDate} onChange={(e) => setReturnDate(e.target.value)} />
+                <input type="time" value={returnTime} onChange={(e) => setReturnTime(e.target.value)} />
               </div>
             </div>
 
