@@ -61,6 +61,13 @@
   margin-top: 5px;
 }
 
+.auth-message {
+  margin-top: 10px; 
+  text-align: center;
+  color: green; 
+  font-weight: bold;
+}
+
 .auth-register-name-fields {
   display: flex;
   justify-content: space-between;
